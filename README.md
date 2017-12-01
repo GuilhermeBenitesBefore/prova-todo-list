@@ -30,7 +30,7 @@ Caso o candidato utilize algum dos itens a seguir conseguirá pontos adicionais 
 
 # Duração da Prova
 
-A prova terá duração determinada pelo período em que o candidato terá acesso ao repositório da prova. O envio é exclusivo pelo GitLab e deve ser durante o período da prova, resaltando que o avaliado tem o direito de entregar a qualquer momento o código contando que esteja no tempo hábil da prova.
+A prova terá duração determinada pelo período em que o candidato terá acesso ao repositório da prova. O envio é exclusivo pelo Github e deve ser durante o período da prova, resaltando que o avaliado tem o direito de entregar a qualquer momento o código contando que esteja no tempo hábil da prova.
 
 # Passos para entregar a Prova
 
