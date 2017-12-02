@@ -1,3 +1,3 @@
 @extends('principal')
 
-    <h1>MAIS UM TESTE </h1>
+    <h1></h1>

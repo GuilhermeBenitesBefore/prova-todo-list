@@ -5,7 +5,9 @@
     <title>Document</title>
 </head>
 <body>
-    @yield('conteudo');
+    <div class="container">
+        @yield('conteudo');
+    </div>
 </body>
 <footer>
     <p class="modal-footer" > @Copyrigth Marlom Figueiredo Souza<p>
