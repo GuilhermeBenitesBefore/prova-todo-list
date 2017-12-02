@@ -1,10 +1,14 @@
 <?php
 namespace TodoList\Http\Controllers;
 
-class TodoController extends Controller {
+use Illuminate\Support\Facades\DB;
+
+class ToDoController extends Controller {
     
         public function lista(){
-            return view('listagem');
+
+            $todos = DB::select('select * from todo_laravel.todos');
+            return view('listagem')->with('toDos',$todos);
         }
 
 

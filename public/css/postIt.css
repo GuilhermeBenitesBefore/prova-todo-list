@@ -1,0 +1,20 @@
+.quote-container {
+    margin-top: 50px;
+    position: relative;
+}
+
+.note {
+    color: #333;
+    position: relative;
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Satisfy;
+    box-shadow: 0 10px 10px 2px rgba(0, 0, 0, 0.3);
+}
+
+.note .botaoLembrar {
+    display: block;
+    margin: 40px 0 0 0;
+    text-align: right;
+}

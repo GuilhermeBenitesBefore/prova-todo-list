@@ -2,6 +2,7 @@
 <html >
 <head>
     <link rel="stylesheet" type="text/css" href="/css/app.css">
+    <link rel="stylesheet" type="text/css" href="/css/postIt.css">
     <title>Document</title>
 </head>
 <body>
