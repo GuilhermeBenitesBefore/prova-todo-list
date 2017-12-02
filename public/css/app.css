@@ -8350,3 +8350,11 @@ button.close {
   }
 }
 
+.main {
+  margin-top: 20px;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
