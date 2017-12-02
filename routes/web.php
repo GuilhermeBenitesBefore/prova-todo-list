@@ -20,4 +20,6 @@ Route::prefix('api')->group(function () {
     Route::post('tasks', 'TaskController@store');
     Route::put('tasks/{task}', 'TaskController@update');
     Route::delete('tasks/{task}', 'TaskController@destroy');
+
+    Route::get('tags', 'TagController@index');
 });

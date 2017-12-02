@@ -45,7 +45,7 @@ class TaskController extends Controller
         if (count($request->get('tags')) > 0) {
             $_tags = [];
             foreach ($request->get('tags') as $tag) {
-                $_tags[]['name'] = $tag;
+                $_tags[]['title'] = $tag;
             }
             $tags = $task->tags()->createMany($_tags);
         }
@@ -86,7 +86,7 @@ class TaskController extends Controller
         if (count($request->get('tags')) > 0) {
             $_tags = [];
             foreach ($request->get('tags') as $tag) {
-                $_tags[]['name'] = $tag;
+                $_tags[]['title'] = $tag;
             }
             $tags = $task->tags()->createMany($_tags);
         }
@@ -104,6 +104,7 @@ class TaskController extends Controller
      */
     public function destroy(Task $task)
     {
+        $task->tags()->delete();
         $task->delete();
         return response()->json(null, 204);
     }
