@@ -79,7 +79,10 @@ class TaskController extends Controller
 
         $task->update($request->all());
 
-        $task->tags()->delete();
+        if (count($task->tags()->get()) > 0) {
+            $task->tags()->delete();
+        }
+
         if (count($request->get('tags')) > 0) {
             $_tags = [];
             foreach ($request->get('tags') as $tag) {
