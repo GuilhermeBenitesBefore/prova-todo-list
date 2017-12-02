@@ -51,3 +51,5 @@ if (token) {
 //     broadcaster: 'pusher',
 //     key: 'your-pusher-key'
 // });
+
+window.BASE_URL = document.head.querySelector('meta[name="base_url"]').content;

@@ -1,13 +1,13 @@
 import './bootstrap';
 
 import Vue from 'vue';
+import store from './store';
 import App from './components/App.vue';
 
-window.Vue = Vue;
+Vue.config.devtools = process.env.NODE_ENV === 'development';
 
-// Vue.config.devtools = true;
-
-const app = new Vue({
+new Vue({
+    store,
     el: '#app',
     render: h => h(App)
 });
