@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('home');
 });
+
+Route::prefix('api')->group(function () {
+    Route::get('tasks', 'TaskController@index');
+    Route::post('tasks', 'TaskController@store');
+    Route::put('tasks/{task}', 'TaskController@update');
+    Route::delete('tasks/{task}', 'TaskController@destroy');
+});
