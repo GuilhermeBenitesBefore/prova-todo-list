@@ -44103,7 +44103,7 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "col-md-7" }, [
       _c("div", { staticClass: "panel panel-default" }, [
-        _c("div", { staticClass: "panel-heading" }, [_vm._v("Tasks")]),
+        _c("div", { staticClass: "panel-heading" }, [_vm._v("Terefas")]),
         _vm._v(" "),
         _c("div", { staticClass: "panel-body" }, [
           _vm._m(0, false, false),
@@ -44136,13 +44136,13 @@ var staticRenderFns = [
     return _c("ul", { staticClass: "nav nav-tabs" }, [
       _c("li", { staticClass: "active" }, [
         _c("a", { attrs: { href: "#pending", "data-toggle": "tab" } }, [
-          _vm._v("Pending")
+          _vm._v("Pendente")
         ])
       ]),
       _vm._v(" "),
       _c("li", [
         _c("a", { attrs: { href: "#done", "data-toggle": "tab" } }, [
-          _vm._v("Done")
+          _vm._v("Concluído")
         ])
       ])
     ])
@@ -60341,6 +60341,9 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
 
 
 
@@ -60699,11 +60702,7 @@ var render = function() {
     [
       _c("form", [
         _c("div", { staticClass: "form-group" }, [
-          _c(
-            "label",
-            { staticClass: "control-label", attrs: { for: "title" } },
-            [_vm._v("Title")]
-          ),
+          _c("label", { attrs: { for: "title" } }, [_vm._v("Título")]),
           _vm._v(" "),
           _c("input", {
             directives: [
@@ -60715,12 +60714,7 @@ var render = function() {
               }
             ],
             staticClass: "form-control",
-            attrs: {
-              type: "text",
-              id: "title",
-              name: "title",
-              placeholder: "Title"
-            },
+            attrs: { type: "text", id: "title", name: "title" },
             domProps: { value: _vm.todo.title },
             on: {
               input: function($event) {
@@ -60737,35 +60731,39 @@ var render = function() {
           "div",
           { staticClass: "form-group" },
           [
-            _c(
-              "label",
-              { staticClass: "control-label", attrs: { for: "tags" } },
-              [_vm._v("Tags")]
-            ),
+            _c("label", { attrs: { for: "tags" } }, [_vm._v("Tags")]),
             _vm._v(" "),
-            _c("v-select", {
-              attrs: {
-                multiple: "",
-                options: _vm.tags,
-                taggable: true,
-                label: "title"
-              },
-              model: {
-                value: _vm.todo.tags,
-                callback: function($$v) {
-                  _vm.$set(_vm.todo, "tags", $$v)
+            _c(
+              "v-select",
+              {
+                attrs: {
+                  multiple: "",
+                  options: _vm.tags,
+                  taggable: true,
+                  label: "title"
                 },
-                expression: "todo.tags"
-              }
-            })
+                model: {
+                  value: _vm.todo.tags,
+                  callback: function($$v) {
+                    _vm.$set(_vm.todo, "tags", $$v)
+                  },
+                  expression: "todo.tags"
+                }
+              },
+              [
+                _c(
+                  "span",
+                  { attrs: { slot: "no-options" }, slot: "no-options" },
+                  [_vm._v("Sem opções correspondentes.")]
+                )
+              ]
+            )
           ],
           1
         ),
         _vm._v(" "),
         _c("div", { staticClass: "form-group" }, [
-          _c("label", { attrs: { for: "description" } }, [
-            _vm._v("Description")
-          ]),
+          _c("label", { attrs: { for: "description" } }, [_vm._v("Descrição")]),
           _vm._v(" "),
           _c("textarea", {
             directives: [
@@ -60794,11 +60792,7 @@ var render = function() {
           "div",
           { staticClass: "form-group" },
           [
-            _c(
-              "label",
-              { staticClass: "control-label", attrs: { for: "start" } },
-              [_vm._v("Start")]
-            ),
+            _c("label", { attrs: { for: "start" } }, [_vm._v("Início")]),
             _vm._v(" "),
             _c("datepicker", {
               attrs: {
@@ -60826,11 +60820,7 @@ var render = function() {
           "div",
           { staticClass: "form-group" },
           [
-            _c(
-              "label",
-              { staticClass: "control-label", attrs: { for: "end" } },
-              [_vm._v("End")]
-            ),
+            _c("label", { attrs: { for: "end" } }, [_vm._v("Fim")]),
             _vm._v(" "),
             _c("datepicker", {
               attrs: {
@@ -60854,46 +60844,48 @@ var render = function() {
           1
         ),
         _vm._v(" "),
-        _c("div", { staticClass: "checkbox" }, [
-          _c("label", [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.todo.done,
-                  expression: "todo.done"
-                }
-              ],
-              attrs: { type: "checkbox" },
-              domProps: {
-                checked: Array.isArray(_vm.todo.done)
-                  ? _vm._i(_vm.todo.done, null) > -1
-                  : _vm.todo.done
-              },
-              on: {
-                change: function($event) {
-                  var $$a = _vm.todo.done,
-                    $$el = $event.target,
-                    $$c = $$el.checked ? true : false
-                  if (Array.isArray($$a)) {
-                    var $$v = null,
-                      $$i = _vm._i($$a, $$v)
-                    if ($$el.checked) {
-                      $$i < 0 && (_vm.todo.done = $$a.concat([$$v]))
+        _c("div", { staticClass: "form-group" }, [
+          _c("div", { staticClass: "checkbox" }, [
+            _c("label", [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.todo.done,
+                    expression: "todo.done"
+                  }
+                ],
+                attrs: { type: "checkbox" },
+                domProps: {
+                  checked: Array.isArray(_vm.todo.done)
+                    ? _vm._i(_vm.todo.done, null) > -1
+                    : _vm.todo.done
+                },
+                on: {
+                  change: function($event) {
+                    var $$a = _vm.todo.done,
+                      $$el = $event.target,
+                      $$c = $$el.checked ? true : false
+                    if (Array.isArray($$a)) {
+                      var $$v = null,
+                        $$i = _vm._i($$a, $$v)
+                      if ($$el.checked) {
+                        $$i < 0 && (_vm.todo.done = $$a.concat([$$v]))
+                      } else {
+                        $$i > -1 &&
+                          (_vm.todo.done = $$a
+                            .slice(0, $$i)
+                            .concat($$a.slice($$i + 1)))
+                      }
                     } else {
-                      $$i > -1 &&
-                        (_vm.todo.done = $$a
-                          .slice(0, $$i)
-                          .concat($$a.slice($$i + 1)))
+                      _vm.$set(_vm.todo, "done", $$c)
                     }
-                  } else {
-                    _vm.$set(_vm.todo, "done", $$c)
                   }
                 }
-              }
-            }),
-            _vm._v(" Done\n            ")
+              }),
+              _vm._v(" Concluído?\n                ")
+            ])
           ])
         ]),
         _vm._v(" "),
@@ -60910,7 +60902,7 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("Submit")]
+              [_vm._v("Adicionar")]
             )
           : _vm._e(),
         _vm._v(" "),
@@ -60927,7 +60919,7 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("Submit")]
+              [_vm._v("Atualizar")]
             )
           : _vm._e(),
         _vm._v(" "),
@@ -60943,7 +60935,7 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("Remove")]
+              [_vm._v("Apagar")]
             )
           : _vm._e(),
         _vm._v(" "),
@@ -60959,7 +60951,7 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("Cancel")]
+              [_vm._v("Cancelar")]
             )
           : _vm._e()
       ]),
@@ -61142,11 +61134,11 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", [_vm._v("Title")]),
+        _c("th", [_vm._v("Título")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Start")]),
+        _c("th", [_vm._v("Início")]),
         _vm._v(" "),
-        _c("th", [_vm._v("End")])
+        _c("th", [_vm._v("Fim")])
       ])
     ])
   }

@@ -2,26 +2,27 @@
     <div>
         <form>
             <div class="form-group">
-                <label class="control-label" for="title">Title</label>
+                <label for="title">Título</label>
                 <input
                     type="text"
                     class="form-control"
                     id="title"
                     name="title"
-                    placeholder="Title"
                     v-model="todo.title" />
             </div>
             <div class="form-group">
-                <label class="control-label" for="tags">Tags</label>
+                <label for="tags">Tags</label>
                 <v-select
                     multiple
                     :options="tags"
                     :taggable="true"
                     v-model="todo.tags"
-                    label="title"></v-select>
+                    label="title">
+                    <span slot="no-options">Sem opções correspondentes.</span>
+                </v-select>
             </div>
             <div class="form-group">
-                <label for="description">Description</label>
+                <label for="description">Descrição</label>
                 <textarea
                     id="description"
                     class="form-control"
@@ -29,7 +30,7 @@
                     v-model="todo.description"></textarea>
             </div>
             <div class="form-group">
-                <label class="control-label" for="start">Start</label>
+                <label for="start">Início</label>
                 <datepicker
                     name="start"
                     format="dd/MM/yyyy"
@@ -41,7 +42,7 @@
                     v-model="todo.start"></datepicker>
             </div>
             <div class="form-group">
-                <label class="control-label" for="end">End</label>
+                <label for="end">Fim</label>
                 <datepicker
                     name="end"
                     format="dd/MM/yyyy"
@@ -52,31 +53,33 @@
                     @selected="handleEndChange"
                     v-model="todo.end"></datepicker>
             </div>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" v-model="todo.done"> Done
-                </label>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" v-model="todo.done"> Concluído?
+                    </label>
+                </div>
             </div>
             <button
                 type="button"
                 class="btn btn-primary"
                 v-if="!isEditMode"
-                @click.prevent="addTodo()">Submit</button>
+                @click.prevent="addTodo()">Adicionar</button>
             <button
                 type="button"
                 class="btn btn-primary"
                 v-if="isEditMode"
-                @click.prevent="editTodo()">Submit</button>
+                @click.prevent="editTodo()">Atualizar</button>
             <button
                 type="button"
                 class="btn btn-danger"
                 v-if="isEditMode"
-                @click="removeTodo()">Remove</button>
+                @click="removeTodo()">Apagar</button>
             <button
                 type="button"
                 class="btn btn-default"
                 v-if="isEditMode"
-                @click="cancelEditMode()">Cancel</button>
+                @click="cancelEditMode()">Cancelar</button>
         </form>
         <simplert :useRadius="true"
             :useIcon="true"

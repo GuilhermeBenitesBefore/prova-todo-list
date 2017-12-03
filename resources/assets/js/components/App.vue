@@ -10,15 +10,15 @@
         </div>
         <div class="col-md-7">
             <div class="panel panel-default">
-                <div class="panel-heading">Tasks</div>
+                <div class="panel-heading">Terefas</div>
                 <div class="panel-body">
 
                     <ul class="nav nav-tabs">
                         <li class="active">
-                            <a href="#pending" data-toggle="tab">Pending</a>
+                            <a href="#pending" data-toggle="tab">Pendente</a>
                         </li>
                         <li>
-                            <a href="#done" data-toggle="tab">Done</a>
+                            <a href="#done" data-toggle="tab">Concluído</a>
                         </li>
                     </ul>
 

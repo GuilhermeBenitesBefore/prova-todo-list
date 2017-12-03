@@ -3,9 +3,9 @@
         <table class="table table-hover" v-if="todos && todos.length">
             <thead>
                 <tr>
-                    <th>Title</th>
-                    <th>Start</th>
-                    <th>End</th>
+                    <th>Título</th>
+                    <th>Início</th>
+                    <th>Fim</th>
                 </tr>
             </thead>
             <tbody>
