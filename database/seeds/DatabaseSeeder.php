@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use TodoList\Category;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,6 +12,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+         $this->call(CategoryTableSeeder::class);
     }
 }
+
+
+class CategoryTableSeeder extends Seeder
+{
+   
+    public function run()
+    {
+        Category::create(['name' => "Casa"]);
+        Category::create(['name' => "Animal"]);
+        Category::create(['name' => 'Trabalho']);
+        Category::create(['name' => "Compra"]);
+        Category::create(['name' => "Outros"]);
+        
+    }
+}
+
