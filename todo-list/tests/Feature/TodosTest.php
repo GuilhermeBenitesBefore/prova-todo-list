@@ -71,7 +71,7 @@ class TodosTest extends TestCase
         $todoToBeEdited = Todo::find(2);
         $todoToBeEdited->description = 'Upgrade to Windows 10, install Office and firefox.';
             
-        $this->post('/update/2', $todoToBeEdited->toArray())->assertStatus(302);
+        $this->put('/update/2', $todoToBeEdited->toArray())->assertStatus(302);
         $this->get('/')->assertDontSeeText('Upgrade to Windows 10 and install Office.');
         $this->get('/')->assertSeeText('Upgrade to Windows 10, install Office and firefox.');
     }
@@ -80,6 +80,10 @@ class TodosTest extends TestCase
         $todoToBeEdited = Todo::find(1);
         $todoToBeEdited->title = null;
             
-        $this->post('/update/1', $todoToBeEdited->toArray())->assertSessionHasErrors('title');
+        $this->put('/update/1', $todoToBeEdited->toArray())->assertSessionHasErrors('title');
+    }
+
+    public function testDeleteATodo() {
+        $this->delete('/delete/2')->assertStatus(302);
     }
 }
