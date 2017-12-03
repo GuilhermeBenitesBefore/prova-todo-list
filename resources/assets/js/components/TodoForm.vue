@@ -53,7 +53,7 @@
                     @selected="handleEndChange"
                     v-model="todo.end"></datepicker>
             </div>
-            <div class="form-group">
+            <div class="form-group" v-if="isEditMode">
                 <div class="checkbox">
                     <label>
                         <input type="checkbox" v-model="todo.done"> Concluído?

@@ -60844,50 +60844,52 @@ var render = function() {
           1
         ),
         _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("div", { staticClass: "checkbox" }, [
-            _c("label", [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.todo.done,
-                    expression: "todo.done"
-                  }
-                ],
-                attrs: { type: "checkbox" },
-                domProps: {
-                  checked: Array.isArray(_vm.todo.done)
-                    ? _vm._i(_vm.todo.done, null) > -1
-                    : _vm.todo.done
-                },
-                on: {
-                  change: function($event) {
-                    var $$a = _vm.todo.done,
-                      $$el = $event.target,
-                      $$c = $$el.checked ? true : false
-                    if (Array.isArray($$a)) {
-                      var $$v = null,
-                        $$i = _vm._i($$a, $$v)
-                      if ($$el.checked) {
-                        $$i < 0 && (_vm.todo.done = $$a.concat([$$v]))
-                      } else {
-                        $$i > -1 &&
-                          (_vm.todo.done = $$a
-                            .slice(0, $$i)
-                            .concat($$a.slice($$i + 1)))
+        _vm.isEditMode
+          ? _c("div", { staticClass: "form-group" }, [
+              _c("div", { staticClass: "checkbox" }, [
+                _c("label", [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.todo.done,
+                        expression: "todo.done"
                       }
-                    } else {
-                      _vm.$set(_vm.todo, "done", $$c)
+                    ],
+                    attrs: { type: "checkbox" },
+                    domProps: {
+                      checked: Array.isArray(_vm.todo.done)
+                        ? _vm._i(_vm.todo.done, null) > -1
+                        : _vm.todo.done
+                    },
+                    on: {
+                      change: function($event) {
+                        var $$a = _vm.todo.done,
+                          $$el = $event.target,
+                          $$c = $$el.checked ? true : false
+                        if (Array.isArray($$a)) {
+                          var $$v = null,
+                            $$i = _vm._i($$a, $$v)
+                          if ($$el.checked) {
+                            $$i < 0 && (_vm.todo.done = $$a.concat([$$v]))
+                          } else {
+                            $$i > -1 &&
+                              (_vm.todo.done = $$a
+                                .slice(0, $$i)
+                                .concat($$a.slice($$i + 1)))
+                          }
+                        } else {
+                          _vm.$set(_vm.todo, "done", $$c)
+                        }
+                      }
                     }
-                  }
-                }
-              }),
-              _vm._v(" Concluído?\n                ")
+                  }),
+                  _vm._v(" Concluído?\n                ")
+                ])
+              ])
             ])
-          ])
-        ]),
+          : _vm._e(),
         _vm._v(" "),
         !_vm.isEditMode
           ? _c(
