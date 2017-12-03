@@ -1,7 +1,27 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import Toasted from 'vue-toasted';
 
 Vue.use(Vuex);
+Vue.use(Toasted, {
+    duration: 4000,
+    theme: 'bubble',
+    singleton: true
+});
+
+const showToastrError = () => {
+    Vue.toasted.show('Ocorreu um erro!', {
+        type: 'error',
+        icon: 'error_outline'
+    });
+}
+
+const showToastrSuccess = (message = 'Cadastrado com sucesso!') => {
+    Vue.toasted.show(message, {
+        type: 'success',
+        icon: 'done'
+    });
+}
 
 export default new Vuex.Store({
     state: {
@@ -45,8 +65,10 @@ export default new Vuex.Store({
         TODO_ADD: ({ commit, dispatch }, payload) => {
             axios.post(`${BASE_URL}api/tasks`, payload).then(resp => {
                 if (resp.data.error) {
+                    showToastrError()
                     return;
                 }
+                showToastrSuccess()
                 commit('TODO_INITIALIZE');
                 dispatch('TODO_LOAD');
                 dispatch('TAG_LOAD');
@@ -55,8 +77,10 @@ export default new Vuex.Store({
         TODO_UPDATE: ({ commit, dispatch }, payload) => {
             axios.put(`${BASE_URL}api/tasks/${payload.id}`, payload).then(resp => {
                 if (resp.data.error) {
+                    showToastrError()
                     return;
                 }
+                showToastrSuccess('Atualizado com sucesso!')
                 commit('TODO_INITIALIZE');
                 dispatch('TODO_LOAD');
                 dispatch('TAG_LOAD');
@@ -65,8 +89,10 @@ export default new Vuex.Store({
         TODO_REMOVE: ({ commit, dispatch }, payload) => {
             axios.delete(`${BASE_URL}api/tasks/${payload.id}`).then(resp => {
                 if (resp.data.error) {
+                    showToastrError()
                     return;
                 }
+                showToastrSuccess('Removido com sucesso!')
                 commit('TODO_INITIALIZE');
                 dispatch('TODO_LOAD');
                 dispatch('TAG_LOAD');
