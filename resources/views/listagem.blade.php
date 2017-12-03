@@ -1,16 +1,21 @@
 @extends('principal')
 @section('conteudo')
 
-<ul>
-@foreach($toDos as $toDo)
-  <li>
-    <div class="postIt">
-      <a href="Todo/delete/{{$toDo->id}}" class="excluir">X</a>
-      <h2>{{$toDo->titulo}}</h2>
-      <p>{{$toDo->descricao}}</p>
+<div class="listaPost">
+  <div class="linhaPostIt">
+  @foreach($toDos as $toDo)
+    <div class="itemPostIt">
+      <div class="postIt">
+        <a href="Todo/delete/{{$toDo->id}}" class="excluir">X</a>
+        <a href="Todo/edit/{{$toDo->id}}" class="excluir">Editar</a>
+        <h2>{{$toDo->titulo}}</h2>
+        <p>{{$toDo->descricao}}</p>
+        <h5>{{$toDo->category->name}}</h5>
+      </div>
     </div>
-  </li>
-@endforeach
-</ul>
+  @endforeach
+  </div>
+</div>
+
 @endsection
     

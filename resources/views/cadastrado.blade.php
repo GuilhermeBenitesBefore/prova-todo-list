@@ -1,6 +1,6 @@
 @extends('principal')
 @section('conteudo')
-<h1>oi
+<h1>
     {{$toDo->titulo}}
     {{$toDo->descricao}}
     {{$toDo->vencimento}}

@@ -15,7 +15,7 @@ class AdicionaRelacionamentoTodoCategory extends Migration
     {
         Schema::table('todos', function(Blueprint $table)
         {
-            $table->integer('category_id')->default(1);
+            $table->integer('category_id');
         });
     }
 

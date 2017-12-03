@@ -9,28 +9,27 @@
   @endforeach
 </div>
 
-<form action="/Todo/cadastrado" method="post">
+<form action="/Todo/cadastrado" method="post" class="cadastrar">
   <input type="hidden" name="_token" value="{{ csrf_token() }}">
-  <div class="quote-container">
-    <blockquote class="note yellow">
-      <input type="text" class="form-control" id="tituloTodo" name="titulo" placeholder="Título">
-      <textarea  style="overflow:hidden" class="form-control" rows="5" name="descricao" placeholder="Descrição" ></textarea>
-      <cite class="botaoLembrar">
-        <div class="row">
-          <div class="form-check">
-            <label for="tituloTodo">Validade: </label>
-            <label class="radio-inline"><input type="radio" value="2016-01-01 00:00:00'" name="vencimento">1 Mês</label>
-            <label class="radio-inline"><input type="radio" value="2017-04-02 00:00:00'" name="vencimento">1 Semana</label>
-            <label class="radio-inline"><input type="radio" value="2018-06-03 00:00:00'" name="vencimento">1 Dia</label>
-            <label class="radio-inline"><input type="radio" value="2019-10-04 00:00:00'" name="vencimento">1 Hora</label>
-          </div>
-        </div>
-        <div class="row">
+  <div class="linhaPostIt">
+    <div class="itemPostIt">
+      <div class="postIt">
+        <h2><input type="text" class="form-control" id="tituloTodo" name="titulo" placeholder="Título"></h2>
+        <p><textarea  style="overflow:hidden" class="form-control" rows="5" name="descricao" placeholder="Descrição" ></textarea></p>
+          <select name="category_id" class="form-control">
+          @foreach($categories as $category )
+            <option  value="{{$category->id}}">{{$category->name}}</option>    
+          @endforeach
+        </select>
+        <input class="form-control"  type="date" name="vencimento" >
+         <div class="botaoLembrar">
           <button type="submit" class="btn btn-primary">Criar Tarefa</button>
         </div>
-      </cite>
-    </blockquote>
+      
+      </div>
+    </div>
   </div>
+
 </form>
 
 @endsection

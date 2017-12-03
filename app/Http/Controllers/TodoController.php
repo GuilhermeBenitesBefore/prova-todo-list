@@ -34,4 +34,9 @@ class ToDoController extends Controller {
     public function newTodo(){
         return view('cadastro')->with('categories', Category::all());
     }
+
+    public function put($id){
+        $toDo = Todo::find($id); 
+        return view('editar')->with(['toDo'=> $toDo,'categories'=>  Category::all()]);
+    }
 }

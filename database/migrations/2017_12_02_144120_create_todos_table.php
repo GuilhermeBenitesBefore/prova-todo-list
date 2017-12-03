@@ -17,7 +17,7 @@ class CreateTodosTable extends Migration
             $table->increments('id');
             $table->string('titulo');
             $table->string('descricao');
-            $table->timestamp('vencimento');
+            $table->date('vencimento');
             $table->timestamps();
         });
     }
