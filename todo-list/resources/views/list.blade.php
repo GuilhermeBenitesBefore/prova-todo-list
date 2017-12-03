@@ -1,14 +1,16 @@
 
 @foreach($todos as $todo)
-
+<form action="/delete/{{ $todo->id }}" method="post">
+    {{ csrf_field() }}
+    {{ method_field('DELETE') }}
     <div class="row todo-base">
         <div class="col-md-10">
             <h3 class="title">{{ $todo->title }} </h3>
         </div>
         <div class="col-md-2">
-            <a href="/delete/{{ $todo->id }}">
+            <button type="submit">
                 <i class="fa fa-trash-o pull-right btn-trash" aria-hidden="true" title="Excluir"></i>
-            </a>
+            </button>
             <a href="/show/{{ $todo->id }}">
                 <i class="fa fa-pencil-square-o pull-right btn-edit" aria-hidden="true" title="Editar"></i>
             </a>
@@ -24,5 +26,5 @@
             </div>
         </div>
     </div>
-
+</form>
 @endforeach

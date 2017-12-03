@@ -37,4 +37,9 @@ class TodoController extends Controller {
 
         return redirect('/');
     }
+
+    public function destroy($id) {
+        Todo::find($id)->delete();
+        return redirect('/');
+    }
 }

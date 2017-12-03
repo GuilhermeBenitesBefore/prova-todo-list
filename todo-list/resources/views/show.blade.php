@@ -1,5 +1,6 @@
 <form class="form-horizontal" action="/update/{{ $selectedTodo->id }}" method="post">
     {{ csrf_field() }}
+    {{ method_field('PUT') }}
     <div class="form-group">
         <input type="text" class="form-control" name="title" value="{{ $selectedTodo->title }}" placeholder="Título">
     </div>
