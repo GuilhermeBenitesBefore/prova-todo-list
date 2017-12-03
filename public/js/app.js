@@ -60338,6 +60338,8 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
 
 
 
@@ -60353,24 +60355,28 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
         tags: 'getFormTags',
         startOptions: 'getFormStartOptions',
         endOptions: 'getFormEndOptions'
-    })),
+    }), {
+        isCompleted: function isCompleted() {
+            return this.todo.title && this.todo.start && this.todo.end;
+        }
+    }),
     created: function created() {
         this.$store.dispatch('TAG_LOAD');
     },
 
     methods: {
         addTodo: function addTodo() {
-            this.todo = Object(__WEBPACK_IMPORTED_MODULE_4__shared_utils__["e" /* tagsBeforeSave */])(this.todo);
-            this.$store.dispatch('TODO_ADD', _extends({}, this.todo, {
-                start: Object(__WEBPACK_IMPORTED_MODULE_4__shared_utils__["a" /* formateDate */])(this.todo.start),
-                end: Object(__WEBPACK_IMPORTED_MODULE_4__shared_utils__["a" /* formateDate */])(this.todo.end)
+            var _todo = Object(__WEBPACK_IMPORTED_MODULE_4__shared_utils__["e" /* tagsBeforeSave */])(this.todo);
+            this.$store.dispatch('TODO_ADD', _extends({}, _todo, {
+                start: Object(__WEBPACK_IMPORTED_MODULE_4__shared_utils__["a" /* formateDate */])(this.todo.start, 'YYYY-MM-DD'),
+                end: Object(__WEBPACK_IMPORTED_MODULE_4__shared_utils__["a" /* formateDate */])(this.todo.end, 'YYYY-MM-DD')
             }));
         },
         editTodo: function editTodo() {
-            this.todo = Object(__WEBPACK_IMPORTED_MODULE_4__shared_utils__["e" /* tagsBeforeSave */])(this.todo);
-            this.$store.dispatch('TODO_UPDATE', _extends({}, this.todo, {
-                start: Object(__WEBPACK_IMPORTED_MODULE_4__shared_utils__["a" /* formateDate */])(this.todo.start),
-                end: Object(__WEBPACK_IMPORTED_MODULE_4__shared_utils__["a" /* formateDate */])(this.todo.end)
+            var _todo = Object(__WEBPACK_IMPORTED_MODULE_4__shared_utils__["e" /* tagsBeforeSave */])(this.todo);
+            this.$store.dispatch('TODO_UPDATE', _extends({}, _todo, {
+                start: Object(__WEBPACK_IMPORTED_MODULE_4__shared_utils__["a" /* formateDate */])(this.todo.start, 'YYYY-MM-DD'),
+                end: Object(__WEBPACK_IMPORTED_MODULE_4__shared_utils__["a" /* formateDate */])(this.todo.end, 'YYYY-MM-DD')
             }));
         },
         removeTodo: function removeTodo() {
@@ -60894,7 +60900,7 @@ var render = function() {
               "button",
               {
                 staticClass: "btn btn-primary",
-                attrs: { type: "button" },
+                attrs: { type: "button", disabled: !_vm.isCompleted },
                 on: {
                   click: function($event) {
                     $event.preventDefault()
@@ -60911,7 +60917,7 @@ var render = function() {
               "button",
               {
                 staticClass: "btn btn-primary",
-                attrs: { type: "button" },
+                attrs: { type: "button", disabled: !_vm.isCompleted },
                 on: {
                   click: function($event) {
                     $event.preventDefault()
@@ -61684,7 +61690,9 @@ var tagsBeforeSave = function tagsBeforeSave(todo) {
 };
 
 var formateDate = function formateDate(value) {
-    return __WEBPACK_IMPORTED_MODULE_2_moment___default()(value).format('DD/MM/YYYY');
+    var format = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'DD/MM/YYYY';
+
+    return __WEBPACK_IMPORTED_MODULE_2_moment___default()(value).format(format);
 };
 
 var showToastrError = function showToastrError() {

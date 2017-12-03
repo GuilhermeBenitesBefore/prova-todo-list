@@ -18,8 +18,8 @@ export const tagsBeforeSave = (todo) => {
     return todo;
 }
 
-export const formateDate = (value) => {
-    return moment(value).format('DD/MM/YYYY');
+export const formateDate = (value, format = 'DD/MM/YYYY') => {
+    return moment(value).format(format);
 }
 
 export const showToastrError = () => {

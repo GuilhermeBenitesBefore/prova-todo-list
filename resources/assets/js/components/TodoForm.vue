@@ -66,11 +66,13 @@
                 type="button"
                 class="btn btn-primary"
                 v-if="!isEditMode"
+                :disabled="!isCompleted"
                 @click.prevent="addTodo()">Adicionar</button>
             <button
                 type="button"
                 class="btn btn-primary"
                 v-if="isEditMode"
+                :disabled="!isCompleted"
                 @click.prevent="editTodo()">Atualizar</button>
             <button
                 type="button"
@@ -106,26 +108,29 @@ export default {
             tags: 'getFormTags',
             startOptions: 'getFormStartOptions',
             endOptions: 'getFormEndOptions'
-        })
+        }),
+        isCompleted: function() {
+            return this.todo.title && this.todo.start && this.todo.end;
+        }
     },
     created() {
         this.$store.dispatch('TAG_LOAD');
     },
     methods: {
         addTodo() {
-            this.todo = tagsBeforeSave(this.todo);
+            const _todo = tagsBeforeSave(this.todo);
             this.$store.dispatch('TODO_ADD', {
-                ...this.todo,
-                start: formateDate(this.todo.start),
-                end: formateDate(this.todo.end)
+                ..._todo,
+                start: formateDate(this.todo.start, 'YYYY-MM-DD'),
+                end: formateDate(this.todo.end, 'YYYY-MM-DD')
             });
         },
         editTodo() {
-            this.todo = tagsBeforeSave(this.todo);
+            const _todo = tagsBeforeSave(this.todo);
             this.$store.dispatch('TODO_UPDATE', {
-                ...this.todo,
-                start: formateDate(this.todo.start),
-                end: formateDate(this.todo.end)
+                ..._todo,
+                start: formateDate(this.todo.start, 'YYYY-MM-DD'),
+                end: formateDate(this.todo.end, 'YYYY-MM-DD')
             });
         },
         removeTodo() {
