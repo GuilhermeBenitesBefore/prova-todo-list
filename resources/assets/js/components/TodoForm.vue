@@ -94,6 +94,7 @@ import Datepicker from 'vuejs-datepicker';
 import moment from 'moment';
 import vSelect from 'vue-select';
 import Simplert from 'vue2-simplert';
+import { tagsBeforeSave, formateDate } from '../utils/utils';
 
 export default {
     components: { Datepicker, vSelect, Simplert },
@@ -111,19 +112,19 @@ export default {
     },
     methods: {
         addTodo() {
-            this.handleTags();
+            this.todo = tagsBeforeSave(this.todo);
             this.$store.dispatch('TODO_ADD', {
                 ...this.todo,
-                start: moment(this.todo.start).format('YYYY-MM-DD'),
-                end: moment(this.todo.end).format('YYYY-MM-DD')
+                start: formateDate(this.todo.start),
+                end: formateDate(this.todo.end)
             });
         },
         editTodo() {
-            this.handleTags();
+            this.todo = tagsBeforeSave(this.todo);
             this.$store.dispatch('TODO_UPDATE', {
                 ...this.todo,
-                start: moment(this.todo.start).format('YYYY-MM-DD'),
-                end: moment(this.todo.end).format('YYYY-MM-DD')
+                start: formateDate(this.todo.start),
+                end: formateDate(this.todo.end)
             });
         },
         removeTodo() {
@@ -146,14 +147,6 @@ export default {
         },
         handleEndChange(date) {
             this.$store.commit('FORM_CHANGE_END_OPTIONS', { date });
-        },
-        handleTags() {
-            this.todo.tags = this.todo.tags.map(tag => {
-                if (tag.title) {
-                    return tag.title;
-                }
-                return tag;
-            });
         },
         cancelEditMode() {
             this.$store.dispatch('FORM_CANCEL');

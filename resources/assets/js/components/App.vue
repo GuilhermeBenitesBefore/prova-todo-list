@@ -15,6 +15,9 @@
 
                     <ul class="nav nav-tabs">
                         <li class="active">
+                            <a href="#all" data-toggle="tab">Todos</a>
+                        </li>
+                        <li>
                             <a href="#pending" data-toggle="tab">Pendente</a>
                         </li>
                         <li>
@@ -24,7 +27,11 @@
 
                     <div class="tab-content">
 
-                        <div class="tab-pane active" id="pending">
+                        <div class="tab-pane active" id="all">
+                            <TodoTable :todos="todos" />
+                        </div>
+
+                        <div class="tab-pane" id="pending">
                             <TodoTable :todos="todosPending" />
                         </div>
 
@@ -49,7 +56,8 @@ export default {
     computed: {
         ...mapGetters({
             todosPending: 'getTodosPending',
-            todosDone: 'getTodosDone'
+            todosDone: 'getTodosDone',
+            todos: 'getTodoList'
         })
     },
     created() {
