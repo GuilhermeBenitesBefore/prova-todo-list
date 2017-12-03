@@ -1,23 +1,12 @@
-@extends('content')
+@extends('app')
 
-@section('todo')
-<?php foreach($todos as $todo) : ?>
-    <div class="row">
-        <h3><?= $todo->title; ?></h3>
+@section('content')
+
+    <div class="col-md-8">
+        @include('list')
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <label><?= $todo->description; ?></label>
-        <div>
+    <div class="col-md-offset-1 col-md-3">
+        @include('new')
     </div>
-    <div class="row">
-        <div class="col-md-12">
-            <button type="button" class="btn btn-primary btn-xs"><?= $todo->category->name ?></button>
-            <i class="fa fa-flag-checkered" aria-hidden="true"></i> <?= $todo->deadline ?>
-            <p class="pull-right">
-                <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
-            </p>
-        </div>
-    </div>
-<?php endforeach ?>
+
 @stop

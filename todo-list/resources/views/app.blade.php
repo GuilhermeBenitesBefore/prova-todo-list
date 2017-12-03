@@ -9,9 +9,18 @@
 
         <link href="/css/app.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <script type="text/javascript">
+            function changeType(e) {
+                console.log('aehoo');
+                if (e.value)
+                    return;
+                
+                e.type = e.type === 'text' ? 'date' : 'text';
+            };
+        </script>
     </head>
     <body>
-        <div class="container" style="max-width: 800px !important">
+        <div class="container">
             @yield('content')
         </div>
     </body>

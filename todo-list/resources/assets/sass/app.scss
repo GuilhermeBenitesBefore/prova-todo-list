@@ -10,3 +10,30 @@
 
 //Font Awesome
 @import "node_modules/font-awesome/scss/font-awesome.scss";
+
+.no-resizable {
+    resize: none;
+}
+
+div.todo-base {
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+            border-radius: $radius;
+
+    background-color: $todo-bg-color;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    padding-top: 10px;
+}
+
+h3.title {
+    margin-top: 10px !important;
+}
+
+div.deadline {
+    margin-right: 10px;
+
+    i {
+        margin-right: 4px;
+    }
+}

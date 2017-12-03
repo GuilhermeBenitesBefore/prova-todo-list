@@ -11403,3 +11403,27 @@ button.close {
   clip: auto;
 }
 
+.no-resizable {
+  resize: none;
+}
+
+div.todo-base {
+  border-radius: 5px;
+  background-color: white;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  padding-top: 10px;
+}
+
+h3.title {
+  margin-top: 10px !important;
+}
+
+div.deadline {
+  margin-right: 10px;
+}
+
+div.deadline i {
+  margin-right: 4px;
+}
+
