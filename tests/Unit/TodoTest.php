@@ -14,15 +14,36 @@ class TodoTest extends TestCase
 
     public function testfindToDoByCategory()
     {
-        $todo = factory(Todo::class)->create(["titulo" => 'titulo3']);
         $category = factory(Category::class)->create(["name" => 'casa']);
+        $category->save();
 
-        $todo->category()->save($category);
+        $category2 = factory(Category::class)->create(["name" => 'mesa']);
+        $category2->save();
 
-        $todoFound = Todo::findToDoByCategoryId($category->id);
+        $todo = factory(Todo::class)->create(["titulo" => 'titulo3', "category_id" =>$category->id ]);
+        $todo->save();
+
+        $todo = factory(Todo::class)->create(["titulo" => 'titulo4', "category_id" =>$category2->id ]);
+        $todo->save();
+
+        $quantidadeToDos = Todo::findToDosByCategoryId($category->id)->count();
 
         
-        $this->assertTrue($todo->id, $todoFound->id );
+        $this->assertfalse($quantidadeToDos == 2);
         
     }
+
+    public function testfindToDosByDate()
+    {
+        $todo = factory(Todo::class)->create(["titulo" => 'titulo3', "vencimento" => "2015-07-29"]);
+        $todo->save();
+
+        $todo = factory(Todo::class)->create(["titulo" => 'titulo8']);
+        $todo->save();
+
+        $quantidadeToDos = Todo::findToDosBetweenDates("2017-07-28","2019-07-28")->count();
+
+        $this->assertTrue($quantidadeToDos == 1);        
+    }
+
 }
