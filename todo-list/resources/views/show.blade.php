@@ -1,5 +1,5 @@
-<form class="form-horizontal" action="/update/1" method="post">
-    <input type="hidden" value="{{ csrf_token() }}" name="_token" />
+<form class="form-horizontal" action="/update/{{ $selectedTodo->id }}" method="post">
+    {{ csrf_field() }}
     <div class="form-group">
         <input type="text" class="form-control" name="title" value="{{ $selectedTodo->title }}" placeholder="Título">
     </div>
@@ -8,7 +8,11 @@
     </div>
     <div class="form-group">
         <select class="form-control" name="category_id" placeholder="Categoria">
-            <option value="1">Trabalho</option>
+            @foreach($categories as $category)
+                <option <? if ($selectedTodo->category_id === $category->id) : echo "selected"; endif; ?> value="{{ $category->id }}">
+                        {{ $category->name }}
+                </option>
+            @endforeach
         </select>
     </div>
     <div class="form-group">

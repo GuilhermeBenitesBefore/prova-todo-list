@@ -8,8 +8,9 @@ use Request;
 class TodoController extends Controller {
     public function all() {
         $todos = Todo::all();
+        $categories = Category::all();
 
-        return view('todo')->with('todos', $todos);
+        return view('todo')->with(['todos' => $todos, 'categories' => $categories]);
     }
 
     public function add(TodoRequest $request) {
@@ -23,8 +24,9 @@ class TodoController extends Controller {
     public function show($id) {
         $todos = Todo::all();
         $selectedTodo = $todos->where('id', $id)->first();
+        $categories = Category::all();
 
-        return view('todo')->with(['selectedTodo' => $selectedTodo, 'todos' => $todos]);
+        return view('todo')->with(['selectedTodo' => $selectedTodo, 'todos' => $todos, 'categories' => $categories]);
     }
 
     public function update(TodoRequest $request, $id) {
@@ -32,11 +34,6 @@ class TodoController extends Controller {
 
         $todo = Todo::where('id', $id)->first();
         $todo->update($params);
-        // $todo->title = $params->title;
-        // $todo->description = $params->description;
-        // $todo->category_id = $params->category_id;
-        // $todo->deadline = $params->deadline;
-        // $todo->save();
 
         return redirect('/');
     }

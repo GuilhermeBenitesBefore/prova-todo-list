@@ -1,5 +1,5 @@
 <form class="form-horizontal" action="/add" method="post">
-    <input type="hidden" value="{{ csrf_token() }}" name="_token" />
+    {{ csrf_field() }}
     <div class="form-group">
         <input type="text" class="form-control" name="title" placeholder="Título">
     </div>
@@ -9,7 +9,9 @@
     <div class="form-group">
         <select class="form-control" name="category_id" placeholder="Categoria">
             <option value="" disabled selected hidden>Escolha uma categoria</option>
-            <option value="1">Trabalho</option>
+            @foreach($categories as $category)
+                <option value="{{ $category->id }}">{{ $category->name }}</option>
+            @endforeach
         </select>
     </div>
     <div class="form-group">
