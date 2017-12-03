@@ -39,4 +39,12 @@ class ToDoController extends Controller {
         $toDo = Todo::find($id); 
         return view('editar')->with(['toDo'=> $toDo,'categories'=>  Category::all()]);
     }
+
+    public function putSave(ToDoRequest $request, $id){
+        $params = $request->all();
+        $todo = Todo::where('id', $id )->first();
+        $todo->update($params);
+          
+        return redirect('/Todo');
+    }
 }

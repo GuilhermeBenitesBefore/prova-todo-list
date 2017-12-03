@@ -9,7 +9,7 @@
   @endforeach
 </div>
 
-<form action="/Todo/edit" method="post" class="cadastrar">
+<form action="/Todo/edit/{{$toDo->id}}" method="post" class="cadastrar">
   <input type="hidden" name="_token" value="{{ csrf_token()}}">
   <input type="hidden" name="id" value="{{$toDo->id}}">
   <div class="linhaPostIt">
