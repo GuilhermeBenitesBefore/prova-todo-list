@@ -2,6 +2,7 @@
 
 use App\Todo;
 use App\Category;
+use App\Http\Requests\TodoRequest;
 use Request;
 
 class TodoController extends Controller {
@@ -11,12 +12,8 @@ class TodoController extends Controller {
         return view('todo')->with('todos', $todos);
     }
 
-    public function create() {
-        return view('create-todo');
-    }
-
-    public function add() {
-        $params = Request::all();
+    public function add(TodoRequest $request) {
+        $params = $request->all();
 
         Todo::create($params);
 

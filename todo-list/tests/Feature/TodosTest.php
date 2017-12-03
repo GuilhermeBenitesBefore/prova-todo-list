@@ -9,7 +9,7 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
-class ViewAllTodosTest extends TestCase
+class TodosTest extends TestCase
 {
     use DatabaseMigrations;
     
@@ -32,5 +32,9 @@ class ViewAllTodosTest extends TestCase
         $todo->save();
 
         $this->get('/')->assertSeeText('This is my first todo!');
+    }
+
+    public function testShouldNotPersistInvalidTodo() {
+        $this->call('POST', '/add')->assertStatus(302);
     }
 }
