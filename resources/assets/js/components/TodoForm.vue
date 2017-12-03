@@ -32,11 +32,11 @@
             <datepicker
                 name="start"
                 format="dd/MM/yyyy"
-                input-class="form-control"
+                input-class="form-control datepicker__input"
                 language="pt-br"
                 :required="true"
+                :disabled="startOptions"
                 @selected="handleStartChange"
-                :disabled="rangeStart"
                 v-model="todo.start"></datepicker>
         </div>
         <div class="form-group">
@@ -44,10 +44,10 @@
             <datepicker
                 name="end"
                 format="dd/MM/yyyy"
-                input-class="form-control"
+                input-class="form-control datepicker__input"
                 language="pt-br"
                 :required="true"
-                :disabled="rangeEnd"
+                :disabled="endOptions"
                 @selected="handleEndChange"
                 v-model="todo.end"></datepicker>
         </div>
@@ -91,18 +91,10 @@ export default {
         ...mapGetters({
             todo: 'getTodoInit',
             isEditMode: 'getEditMode',
-            tags: 'getFormTags'
+            tags: 'getFormTags',
+            startOptions: 'getFormStartOptions',
+            endOptions: 'getFormEndOptions'
         })
-    },
-    data() {
-        return {
-            rangeStart: {
-                to: new Date()
-            },
-            rangeEnd: {
-                to: new Date()
-            }
-        }
     },
     created() {
         this.$store.dispatch('TAG_LOAD');
@@ -115,7 +107,6 @@ export default {
                 start: moment(this.todo.start).format('YYYY-MM-DD'),
                 end: moment(this.todo.end).format('YYYY-MM-DD')
             });
-            this.resetRangeDates();
         },
         editTodo() {
             this.handleTags();
@@ -124,23 +115,15 @@ export default {
                 start: moment(this.todo.start).format('YYYY-MM-DD'),
                 end: moment(this.todo.end).format('YYYY-MM-DD')
             });
-            this.resetRangeDates();
         },
         removeTodo() {
             this.$store.dispatch('TODO_REMOVE', this.todo);
-            this.resetRangeDates();
         },
         handleStartChange(date) {
-            this.rangeEnd = {...this.rangeEnd, to: date};
-            if (this.todo.end && moment(date) > moment(this.todo.end)) {
-                this.todo.end = null;
-            }
+            this.$store.commit('FORM_CHANGE_START_OPTIONS', { date });
         },
         handleEndChange(date) {
-            this.rangeStart = {...this.rangeStart, from: date};
-            if (this.todo.start && moment(date) < moment(this.todo.start)) {
-                this.todo.start = null;
-            }
+            this.$store.commit('FORM_CHANGE_END_OPTIONS', { date });
         },
         handleTags() {
             this.todo.tags = this.todo.tags.map(tag => {
@@ -152,16 +135,13 @@ export default {
         },
         cancelEditMode() {
             this.$store.dispatch('FORM_CANCEL');
-            this.resetRangeDates();
-        },
-        resetRangeDates() {
-            this.rangeStart = {
-                to: new Date()
-            };
-            this.rangeEnd = {
-                to: new Date()
-            };
         }
     }
 }
 </script>
+
+<style>
+.datepicker__input:read-only {
+    background-color: #ffffff;
+}
+</style>

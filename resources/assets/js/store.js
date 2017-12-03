@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import Toasted from 'vue-toasted';
+import moment from 'moment';
 
 Vue.use(Vuex);
 Vue.use(Toasted, {
@@ -23,12 +24,31 @@ const showToastrSuccess = (message = 'Cadastrado com sucesso!') => {
     });
 }
 
+const getYesterday = () => {
+    let date = new Date();
+    date.setDate(date.getDate() - 1);
+    return date;
+}
+
 export default new Vuex.Store({
     state: {
         todoForm: {
-            todoInit: {},
+            todoInit: {
+                title: '',
+                description: '',
+                start: '',
+                end: '',
+                done: false,
+                tags: []
+            },
             isEditMode: false,
-            tags: []
+            tags: [],
+            startOptions: {
+                to: getYesterday()
+            },
+            endOptions: {
+                to: getYesterday()
+            }
         },
         todoList: {
             todos: []
@@ -52,6 +72,12 @@ export default new Vuex.Store({
         },
         getFormTags(state) {
             return state.todoForm.tags;
+        },
+        getFormStartOptions(state) {
+            return state.todoForm.startOptions;
+        },
+        getFormEndOptions(state) {
+            return state.todoForm.endOptions;
         }
     },
     actions: {
@@ -115,7 +141,20 @@ export default new Vuex.Store({
             state.todoList.todos = todos;
         },
         TODO_INITIALIZE: (state, payload) => {
-            state.todoForm.todoInit = {};
+            state.todoForm.todoInit = {
+                title: '',
+                description: '',
+                start: '',
+                end: '',
+                done: false,
+                tags: []
+            };
+            state.todoForm.startOptions = {
+                to: getYesterday()
+            };
+            state.todoForm.endOptions = {
+                to: getYesterday()
+            };
             state.todoForm.isEditMode = false;
         },
         FORM_SET_EDIT: (state, payload) => {
@@ -124,6 +163,18 @@ export default new Vuex.Store({
         },
         FORM_SET_TAGS: (state, { tags }) => {
             state.todoForm.tags = tags;
+        },
+        FORM_CHANGE_START_OPTIONS: (state, { date }) => {
+            state.todoForm.endOptions = { ...state.todoForm.endOptions, to: date }
+            if (state.todoForm.todoInit.end && moment(date) > moment(state.todoForm.todoInit.end)) {
+                state.todoForm.todoInit.end = '';
+            }
+        },
+        FORM_CHANGE_END_OPTIONS: (state, { date }) => {
+            state.todoForm.startOptions = { ...state.todoForm.startOptions, from: date }
+            if (state.todoForm.todoInit.start && moment(date) < moment(state.todoForm.todoInit.start)) {
+                state.todoForm.todoInit.start = '';
+            }
         }
     }
 });
