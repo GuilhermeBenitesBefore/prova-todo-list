@@ -49,8 +49,7 @@
 </template>
 
 <script>
-import moment from 'moment';
-import { tagsBeforeSave, formateDate } from '../utils/utils';
+import { tagsBeforeSave, formateDate } from '../shared/utils';
 
 export default {
     props: ['todos'],

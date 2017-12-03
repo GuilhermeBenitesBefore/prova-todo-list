@@ -1,34 +1,9 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import Toasted from 'vue-toasted';
 import moment from 'moment';
+import { showToastrError, showToastrSuccess, getYesterday } from './shared/utils';
 
 Vue.use(Vuex);
-Vue.use(Toasted, {
-    duration: 4000,
-    theme: 'bubble',
-    singleton: true
-});
-
-const showToastrError = () => {
-    Vue.toasted.show('Ocorreu um erro!', {
-        type: 'error',
-        icon: 'error_outline'
-    });
-}
-
-const showToastrSuccess = (message = 'Cadastrado com sucesso!') => {
-    Vue.toasted.show(message, {
-        type: 'success',
-        icon: 'done'
-    });
-}
-
-const getYesterday = () => {
-    let date = new Date();
-    date.setDate(date.getDate() - 1);
-    return date;
-}
 
 export default new Vuex.Store({
     state: {
@@ -164,13 +139,13 @@ export default new Vuex.Store({
         FORM_SET_TAGS: (state, { tags }) => {
             state.todoForm.tags = tags;
         },
-        FORM_CHANGE_START_OPTIONS: (state, { date }) => {
+        FORM_SET_START_OPTIONS: (state, { date }) => {
             state.todoForm.endOptions = { ...state.todoForm.endOptions, to: date }
             if (state.todoForm.todoInit.end && moment(date) > moment(state.todoForm.todoInit.end)) {
                 state.todoForm.todoInit.end = '';
             }
         },
-        FORM_CHANGE_END_OPTIONS: (state, { date }) => {
+        FORM_SET_END_OPTIONS: (state, { date }) => {
             state.todoForm.startOptions = { ...state.todoForm.startOptions, from: date }
             if (state.todoForm.todoInit.start && moment(date) < moment(state.todoForm.todoInit.start)) {
                 state.todoForm.todoInit.start = '';

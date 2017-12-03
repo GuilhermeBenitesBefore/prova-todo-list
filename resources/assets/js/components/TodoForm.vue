@@ -38,7 +38,8 @@
                     language="pt-br"
                     :required="true"
                     :disabled="startOptions"
-                    @selected="handleStartChange"
+                    @selected="handleStartSelected"
+                    @opened="handleStartOpened"
                     v-model="todo.start"></datepicker>
             </div>
             <div class="form-group">
@@ -50,7 +51,8 @@
                     language="pt-br"
                     :required="true"
                     :disabled="endOptions"
-                    @selected="handleEndChange"
+                    @selected="handleEndSelected"
+                    @opened="handleEndOpened"
                     v-model="todo.end"></datepicker>
             </div>
             <div class="form-group" v-if="isEditMode">
@@ -91,10 +93,9 @@
 <script>
 import { mapGetters } from 'vuex';
 import Datepicker from 'vuejs-datepicker';
-import moment from 'moment';
 import vSelect from 'vue-select';
 import Simplert from 'vue2-simplert';
-import { tagsBeforeSave, formateDate } from '../utils/utils';
+import { tagsBeforeSave, formateDate } from '../shared/utils';
 
 export default {
     components: { Datepicker, vSelect, Simplert },
@@ -142,14 +143,20 @@ export default {
                 }
             });
         },
-        handleStartChange(date) {
-            this.$store.commit('FORM_CHANGE_START_OPTIONS', { date });
+        handleStartSelected(date) {
+            this.$store.commit('FORM_SET_START_OPTIONS', { date });
         },
-        handleEndChange(date) {
-            this.$store.commit('FORM_CHANGE_END_OPTIONS', { date });
+        handleEndSelected(date) {
+            this.$store.commit('FORM_SET_END_OPTIONS', { date });
         },
         cancelEditMode() {
             this.$store.dispatch('FORM_CANCEL');
+        },
+        handleStartOpened() {
+            this.$store.commit('FORM_SET_END_OPTIONS', { date: new Date(this.todo.end) });
+        },
+        handleEndOpened() {
+            this.$store.commit('FORM_SET_START_OPTIONS', { date: new Date(this.todo.start) });
         }
     }
 }
