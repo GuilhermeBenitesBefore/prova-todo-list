@@ -15754,13 +15754,14 @@ module.exports = Vue$3;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export Store */
-/* unused harmony export install */
-/* unused harmony export mapState */
-/* unused harmony export mapMutations */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return mapGetters; });
-/* unused harmony export mapActions */
-/* unused harmony export createNamespacedHelpers */
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Store", function() { return Store; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "install", function() { return install; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapState", function() { return mapState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapMutations", function() { return mapMutations; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapGetters", function() { return mapGetters; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mapActions", function() { return mapActions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createNamespacedHelpers", function() { return createNamespacedHelpers; });
 /**
  * vuex v3.0.1
  * (c) 2017 Evan You
@@ -16691,7 +16692,7 @@ var index_esm = {
 };
 
 
-/* harmony default export */ __webpack_exports__["a"] = (index_esm);
+/* harmony default export */ __webpack_exports__["default"] = (index_esm);
 
 
 /***/ }),
@@ -16699,11 +16700,12 @@ var index_esm = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return tagsBeforeSave; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return formateDate; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return showToastrError; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return showToastrSuccess; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return getYesterday; });
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "tagsBeforeSave", function() { return tagsBeforeSave; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formateDate", function() { return formateDate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "showToastrError", function() { return showToastrError; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "showToastrSuccess", function() { return showToastrSuccess; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getYesterday", function() { return getYesterday; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_toasted__ = __webpack_require__(164);
@@ -29085,6 +29087,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__store___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__store__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_App_vue__ = __webpack_require__(165);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_App_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_App_vue__);
 
@@ -29097,7 +29100,7 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.config.devtools = "development" === 
 
 /* eslint-disable no-new */
 new __WEBPACK_IMPORTED_MODULE_1_vue___default.a({
-  store: __WEBPACK_IMPORTED_MODULE_2__store__["a" /* default */],
+  store: __WEBPACK_IMPORTED_MODULE_2__store___default.a,
   el: '#app',
   render: function render(h) {
     return h(__WEBPACK_IMPORTED_MODULE_3__components_App_vue___default.a);
@@ -29107,6 +29110,8 @@ new __WEBPACK_IMPORTED_MODULE_1_vue___default.a({
 /***/ }),
 /* 137 */
 /***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 
 
 window._ = __webpack_require__(138);
@@ -60046,197 +60051,217 @@ exports.clearImmediate = clearImmediate;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moment__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_moment__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_utils__ = __webpack_require__(6);
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.mutations = exports.actions = exports.getters = undefined;
+
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
+var _vue = __webpack_require__(4);
 
+var _vue2 = _interopRequireDefault(_vue);
 
+var _vuex = __webpack_require__(5);
 
+var _vuex2 = _interopRequireDefault(_vuex);
 
+var _moment = __webpack_require__(0);
 
-__WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */]);
+var _moment2 = _interopRequireDefault(_moment);
 
-/* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
-  state: {
-    todoForm: {
-      todoInit: {
-        title: '',
-        description: '',
-        start: '',
-        end: '',
-        done: false,
-        tags: []
-      },
-      isEditMode: false,
-      tags: [],
-      startOptions: {
-        to: Object(__WEBPACK_IMPORTED_MODULE_3__shared_utils__["b" /* getYesterday */])()
-      },
-      endOptions: {
-        to: Object(__WEBPACK_IMPORTED_MODULE_3__shared_utils__["b" /* getYesterday */])()
+var _utils = __webpack_require__(6);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_vue2.default.use(_vuex2.default);
+
+var state = {
+  todoForm: {
+    todoInit: {
+      title: '',
+      description: '',
+      start: '',
+      end: '',
+      done: false,
+      tags: []
+    },
+    isEditMode: false,
+    tags: [],
+    startOptions: {
+      to: (0, _utils.getYesterday)()
+    },
+    endOptions: {
+      to: (0, _utils.getYesterday)()
+    }
+  },
+  todoList: {
+    todos: []
+  }
+};
+
+var getters = exports.getters = {
+  getTodoList: function getTodoList(state) {
+    return state.todoList.todos;
+  },
+  getTodoInit: function getTodoInit(state) {
+    return state.todoForm.todoInit;
+  },
+  getTodosDone: function getTodosDone(state) {
+    return state.todoList.todos.filter(function (todo) {
+      return todo.done;
+    });
+  },
+  getTodosPending: function getTodosPending(state) {
+    return state.todoList.todos.filter(function (todo) {
+      return !todo.done;
+    });
+  },
+  getEditMode: function getEditMode(state) {
+    return state.todoForm.isEditMode;
+  },
+  getFormTags: function getFormTags(state) {
+    return state.todoForm.tags;
+  },
+  getFormStartOptions: function getFormStartOptions(state) {
+    return state.todoForm.startOptions;
+  },
+  getFormEndOptions: function getFormEndOptions(state) {
+    return state.todoForm.endOptions;
+  }
+};
+
+var actions = exports.actions = {
+  TODO_LOAD: function TODO_LOAD(_ref) {
+    var commit = _ref.commit;
+
+    axios.get(BASE_URL + '/api/tasks').then(function (resp) {
+      commit('TODO_SET', {
+        todos: resp.data
+      });
+    });
+  },
+  TODO_ADD: function TODO_ADD(_ref2, payload) {
+    var commit = _ref2.commit,
+        dispatch = _ref2.dispatch;
+
+    axios.post(BASE_URL + 'api/tasks', payload).then(function (resp) {
+      if (resp.data.error) {
+        (0, _utils.showToastrError)();
+        return;
       }
-    },
-    todoList: {
-      todos: []
-    }
-  },
-  getters: {
-    getTodoList: function getTodoList(state) {
-      return state.todoList.todos;
-    },
-    getTodoInit: function getTodoInit(state) {
-      return state.todoForm.todoInit;
-    },
-    getTodosDone: function getTodosDone(state) {
-      return state.todoList.todos.filter(function (todo) {
-        return todo.done;
-      });
-    },
-    getTodosPending: function getTodosPending(state) {
-      return state.todoList.todos.filter(function (todo) {
-        return !todo.done;
-      });
-    },
-    getEditMode: function getEditMode(state) {
-      return state.todoForm.isEditMode;
-    },
-    getFormTags: function getFormTags(state) {
-      return state.todoForm.tags;
-    },
-    getFormStartOptions: function getFormStartOptions(state) {
-      return state.todoForm.startOptions;
-    },
-    getFormEndOptions: function getFormEndOptions(state) {
-      return state.todoForm.endOptions;
-    }
-  },
-  actions: {
-    TODO_LOAD: function TODO_LOAD(_ref) {
-      var commit = _ref.commit;
-
-      axios.get(BASE_URL + '/api/tasks').then(function (resp) {
-        commit('TODO_SET', {
-          todos: resp.data
-        });
-      });
-    },
-    TODO_ADD: function TODO_ADD(_ref2, payload) {
-      var commit = _ref2.commit,
-          dispatch = _ref2.dispatch;
-
-      axios.post(BASE_URL + 'api/tasks', payload).then(function (resp) {
-        if (resp.data.error) {
-          Object(__WEBPACK_IMPORTED_MODULE_3__shared_utils__["c" /* showToastrError */])();
-          return;
-        }
-        Object(__WEBPACK_IMPORTED_MODULE_3__shared_utils__["d" /* showToastrSuccess */])();
-        commit('TODO_INITIALIZE');
-        dispatch('TODO_LOAD');
-        dispatch('TAG_LOAD');
-      });
-    },
-    TODO_UPDATE: function TODO_UPDATE(_ref3, payload) {
-      var commit = _ref3.commit,
-          dispatch = _ref3.dispatch;
-
-      axios.put(BASE_URL + 'api/tasks/' + payload.id, payload).then(function (resp) {
-        if (resp.data.error) {
-          Object(__WEBPACK_IMPORTED_MODULE_3__shared_utils__["c" /* showToastrError */])();
-          return;
-        }
-        Object(__WEBPACK_IMPORTED_MODULE_3__shared_utils__["d" /* showToastrSuccess */])('Atualizado com sucesso!');
-        commit('TODO_INITIALIZE');
-        dispatch('TODO_LOAD');
-        dispatch('TAG_LOAD');
-      });
-    },
-    TODO_REMOVE: function TODO_REMOVE(_ref4, payload) {
-      var commit = _ref4.commit,
-          dispatch = _ref4.dispatch;
-
-      axios.delete(BASE_URL + 'api/tasks/' + payload.id).then(function (resp) {
-        if (resp.data.error) {
-          Object(__WEBPACK_IMPORTED_MODULE_3__shared_utils__["c" /* showToastrError */])();
-          return;
-        }
-        Object(__WEBPACK_IMPORTED_MODULE_3__shared_utils__["d" /* showToastrSuccess */])('Removido com sucesso!');
-        commit('TODO_INITIALIZE');
-        dispatch('TODO_LOAD');
-        dispatch('TAG_LOAD');
-      });
-    },
-    TAG_LOAD: function TAG_LOAD(_ref5, payload) {
-      var commit = _ref5.commit;
-
-      axios.get(BASE_URL + '/api/tags').then(function (resp) {
-        commit('FORM_SET_TAGS', {
-          tags: resp.data
-        });
-      });
-    },
-    FORM_CANCEL: function FORM_CANCEL(_ref6) {
-      var commit = _ref6.commit,
-          dispatch = _ref6.dispatch;
-
+      (0, _utils.showToastrSuccess)();
       commit('TODO_INITIALIZE');
       dispatch('TODO_LOAD');
+      dispatch('TAG_LOAD');
+    });
+  },
+  TODO_UPDATE: function TODO_UPDATE(_ref3, payload) {
+    var commit = _ref3.commit,
+        dispatch = _ref3.dispatch;
+
+    axios.put(BASE_URL + 'api/tasks/' + payload.id, payload).then(function (resp) {
+      if (resp.data.error) {
+        (0, _utils.showToastrError)();
+        return;
+      }
+      (0, _utils.showToastrSuccess)('Atualizado com sucesso!');
+      commit('TODO_INITIALIZE');
+      dispatch('TODO_LOAD');
+      dispatch('TAG_LOAD');
+    });
+  },
+  TODO_REMOVE: function TODO_REMOVE(_ref4, payload) {
+    var commit = _ref4.commit,
+        dispatch = _ref4.dispatch;
+
+    axios.delete(BASE_URL + 'api/tasks/' + payload.id).then(function (resp) {
+      if (resp.data.error) {
+        (0, _utils.showToastrError)();
+        return;
+      }
+      (0, _utils.showToastrSuccess)('Removido com sucesso!');
+      commit('TODO_INITIALIZE');
+      dispatch('TODO_LOAD');
+      dispatch('TAG_LOAD');
+    });
+  },
+  TAG_LOAD: function TAG_LOAD(_ref5, payload) {
+    var commit = _ref5.commit;
+
+    axios.get(BASE_URL + '/api/tags').then(function (resp) {
+      commit('FORM_SET_TAGS', {
+        tags: resp.data
+      });
+    });
+  },
+  FORM_CANCEL: function FORM_CANCEL(_ref6) {
+    var commit = _ref6.commit,
+        dispatch = _ref6.dispatch;
+
+    commit('TODO_INITIALIZE');
+    dispatch('TODO_LOAD');
+  }
+};
+
+var mutations = exports.mutations = {
+  TODO_SET: function TODO_SET(state, _ref7) {
+    var todos = _ref7.todos;
+
+    state.todoList.todos = todos;
+  },
+  TODO_INITIALIZE: function TODO_INITIALIZE(state, payload) {
+    state.todoForm.todoInit = {
+      title: '',
+      description: '',
+      start: '',
+      end: '',
+      done: false,
+      tags: []
+    };
+    state.todoForm.startOptions = {
+      to: (0, _utils.getYesterday)()
+    };
+    state.todoForm.endOptions = {
+      to: (0, _utils.getYesterday)()
+    };
+    state.todoForm.isEditMode = false;
+  },
+  FORM_SET_EDIT: function FORM_SET_EDIT(state, payload) {
+    state.todoForm.isEditMode = true;
+    state.todoForm.todoInit = payload;
+  },
+  FORM_SET_TAGS: function FORM_SET_TAGS(state, _ref8) {
+    var tags = _ref8.tags;
+
+    state.todoForm.tags = tags;
+  },
+  FORM_SET_START_OPTIONS: function FORM_SET_START_OPTIONS(state, _ref9) {
+    var date = _ref9.date;
+
+    state.todoForm.endOptions = _extends({}, state.todoForm.endOptions, { to: date });
+    if (state.todoForm.todoInit.end && (0, _moment2.default)(date) > (0, _moment2.default)(state.todoForm.todoInit.end)) {
+      state.todoForm.todoInit.end = '';
     }
   },
-  mutations: {
-    TODO_SET: function TODO_SET(state, _ref7) {
-      var todos = _ref7.todos;
+  FORM_SET_END_OPTIONS: function FORM_SET_END_OPTIONS(state, _ref10) {
+    var date = _ref10.date;
 
-      state.todoList.todos = todos;
-    },
-    TODO_INITIALIZE: function TODO_INITIALIZE(state, payload) {
-      state.todoForm.todoInit = {
-        title: '',
-        description: '',
-        start: '',
-        end: '',
-        done: false,
-        tags: []
-      };
-      state.todoForm.startOptions = {
-        to: Object(__WEBPACK_IMPORTED_MODULE_3__shared_utils__["b" /* getYesterday */])()
-      };
-      state.todoForm.endOptions = {
-        to: Object(__WEBPACK_IMPORTED_MODULE_3__shared_utils__["b" /* getYesterday */])()
-      };
-      state.todoForm.isEditMode = false;
-    },
-    FORM_SET_EDIT: function FORM_SET_EDIT(state, payload) {
-      state.todoForm.isEditMode = true;
-      state.todoForm.todoInit = payload;
-    },
-    FORM_SET_TAGS: function FORM_SET_TAGS(state, _ref8) {
-      var tags = _ref8.tags;
-
-      state.todoForm.tags = tags;
-    },
-    FORM_SET_START_OPTIONS: function FORM_SET_START_OPTIONS(state, _ref9) {
-      var date = _ref9.date;
-
-      state.todoForm.endOptions = _extends({}, state.todoForm.endOptions, { to: date });
-      if (state.todoForm.todoInit.end && __WEBPACK_IMPORTED_MODULE_2_moment___default()(date) > __WEBPACK_IMPORTED_MODULE_2_moment___default()(state.todoForm.todoInit.end)) {
-        state.todoForm.todoInit.end = '';
-      }
-    },
-    FORM_SET_END_OPTIONS: function FORM_SET_END_OPTIONS(state, _ref10) {
-      var date = _ref10.date;
-
-      state.todoForm.startOptions = _extends({}, state.todoForm.startOptions, { from: date });
-      if (state.todoForm.todoInit.start && __WEBPACK_IMPORTED_MODULE_2_moment___default()(date) < __WEBPACK_IMPORTED_MODULE_2_moment___default()(state.todoForm.todoInit.start)) {
-        state.todoForm.todoInit.start = '';
-      }
+    state.todoForm.startOptions = _extends({}, state.todoForm.startOptions, { from: date });
+    if (state.todoForm.todoInit.start && (0, _moment2.default)(date) < (0, _moment2.default)(state.todoForm.todoInit.start)) {
+      state.todoForm.todoInit.start = '';
     }
   }
-}));
+};
+
+exports.default = new _vuex2.default.Store({
+  state: state,
+  getters: getters,
+  actions: actions,
+  mutations: mutations
+});
 
 /***/ }),
 /* 163 */
@@ -60552,18 +60577,16 @@ module.exports = Component.exports
 
 /***/ }),
 /* 166 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__TodoForm__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__TodoForm___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__TodoForm__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__TodoList__ = __webpack_require__(176);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__TodoList___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__TodoList__);
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-//
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; //
 //
 //
 //
@@ -60612,13 +60635,21 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 
+var _vuex = __webpack_require__(5);
 
+var _TodoForm = __webpack_require__(167);
 
+var _TodoForm2 = _interopRequireDefault(_TodoForm);
 
+var _TodoList = __webpack_require__(176);
 
-/* harmony default export */ __webpack_exports__["default"] = ({
-  components: { TodoForm: __WEBPACK_IMPORTED_MODULE_1__TodoForm___default.a, TodoTable: __WEBPACK_IMPORTED_MODULE_2__TodoList___default.a },
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])({
+var _TodoList2 = _interopRequireDefault(_TodoList);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  components: { TodoForm: _TodoForm2.default, TodoTable: _TodoList2.default },
+  computed: _extends({}, (0, _vuex.mapGetters)({
     todosPending: 'getTodosPending',
     todosDone: 'getTodosDone',
     todos: 'getTodoList'
@@ -60626,7 +60657,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
   created: function created() {
     this.$store.dispatch('TODO_LOAD');
   }
-});
+};
 
 /***/ }),
 /* 167 */
@@ -60755,21 +60786,16 @@ module.exports = function listToStyles (parentId, list) {
 
 /***/ }),
 /* 171 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuex__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuejs_datepicker__ = __webpack_require__(172);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuejs_datepicker___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vuejs_datepicker__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_select__ = __webpack_require__(173);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue_select___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue_select__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue2_simplert__ = __webpack_require__(174);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue2_simplert___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vue2_simplert__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_utils__ = __webpack_require__(6);
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-//
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; //
 //
 //
 //
@@ -60864,15 +60890,27 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 
+var _vuex = __webpack_require__(5);
 
+var _vuejsDatepicker = __webpack_require__(172);
 
+var _vuejsDatepicker2 = _interopRequireDefault(_vuejsDatepicker);
 
+var _vueSelect = __webpack_require__(173);
 
+var _vueSelect2 = _interopRequireDefault(_vueSelect);
 
+var _vue2Simplert = __webpack_require__(174);
 
-/* harmony default export */ __webpack_exports__["default"] = ({
-  components: { Datepicker: __WEBPACK_IMPORTED_MODULE_1_vuejs_datepicker___default.a, vSelect: __WEBPACK_IMPORTED_MODULE_2_vue_select___default.a, Simplert: __WEBPACK_IMPORTED_MODULE_3_vue2_simplert___default.a },
-  computed: _extends({}, Object(__WEBPACK_IMPORTED_MODULE_0_vuex__["b" /* mapGetters */])({
+var _vue2Simplert2 = _interopRequireDefault(_vue2Simplert);
+
+var _utils = __webpack_require__(6);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  components: { Datepicker: _vuejsDatepicker2.default, vSelect: _vueSelect2.default, Simplert: _vue2Simplert2.default },
+  computed: _extends({}, (0, _vuex.mapGetters)({
     todo: 'getTodoInit',
     isEditMode: 'getEditMode',
     tags: 'getFormTags',
@@ -60889,17 +60927,17 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
   methods: {
     addTodo: function addTodo() {
-      var _todo = Object(__WEBPACK_IMPORTED_MODULE_4__shared_utils__["e" /* tagsBeforeSave */])(this.todo);
+      var _todo = (0, _utils.tagsBeforeSave)(this.todo);
       this.$store.dispatch('TODO_ADD', _extends({}, _todo, {
-        start: Object(__WEBPACK_IMPORTED_MODULE_4__shared_utils__["a" /* formateDate */])(this.todo.start, 'YYYY-MM-DD'),
-        end: Object(__WEBPACK_IMPORTED_MODULE_4__shared_utils__["a" /* formateDate */])(this.todo.end, 'YYYY-MM-DD')
+        start: (0, _utils.formateDate)(this.todo.start, 'YYYY-MM-DD'),
+        end: (0, _utils.formateDate)(this.todo.end, 'YYYY-MM-DD')
       }));
     },
     editTodo: function editTodo() {
-      var _todo = Object(__WEBPACK_IMPORTED_MODULE_4__shared_utils__["e" /* tagsBeforeSave */])(this.todo);
+      var _todo = (0, _utils.tagsBeforeSave)(this.todo);
       this.$store.dispatch('TODO_UPDATE', _extends({}, _todo, {
-        start: Object(__WEBPACK_IMPORTED_MODULE_4__shared_utils__["a" /* formateDate */])(this.todo.start, 'YYYY-MM-DD'),
-        end: Object(__WEBPACK_IMPORTED_MODULE_4__shared_utils__["a" /* formateDate */])(this.todo.end, 'YYYY-MM-DD')
+        start: (0, _utils.formateDate)(this.todo.start, 'YYYY-MM-DD'),
+        end: (0, _utils.formateDate)(this.todo.end, 'YYYY-MM-DD')
       }));
     },
     removeTodo: function removeTodo() {
@@ -60935,7 +60973,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
       this.$store.commit('FORM_SET_START_OPTIONS', { date: new Date(this.todo.start) });
     }
   }
-});
+};
 
 /***/ }),
 /* 172 */
@@ -61425,7 +61463,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.$store.commit('FORM_SET_EDIT', todo);
     },
     handleChange: function handleChange(todo) {
-      this.$store.dispatch('TODO_UPDATE', Object(__WEBPACK_IMPORTED_MODULE_0__shared_utils__["e" /* tagsBeforeSave */])(todo));
+      this.$store.dispatch('TODO_UPDATE', Object(__WEBPACK_IMPORTED_MODULE_0__shared_utils__["tagsBeforeSave"])(todo));
     }
   },
   filters: {
@@ -61433,7 +61471,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       if (!value) {
         return '';
       }
-      return Object(__WEBPACK_IMPORTED_MODULE_0__shared_utils__["a" /* formateDate */])(value);
+      return Object(__WEBPACK_IMPORTED_MODULE_0__shared_utils__["formateDate"])(value);
     }
   }
 });
