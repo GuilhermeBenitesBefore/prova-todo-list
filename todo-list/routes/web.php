@@ -13,3 +13,5 @@
 
 Route::get('/', 'TodoController@all');
 Route::post('/add', 'TodoController@add');
+Route::get('/show/{id}', 'TodoController@show');
+Route::post('/update/{id}', 'TodoController@update');
