@@ -1,67 +1,67 @@
 <template>
-    <div class="row">
-        <div class="col-md-5">
-            <div class="panel panel-primary">
-                <div class="panel-heading">TodoList</div>
-                <div class="panel-body">
-                    <TodoForm />
-                </div>
-            </div>
+  <div class="row">
+    <div class="col-md-5">
+      <div class="panel panel-primary">
+        <div class="panel-heading">TodoList</div>
+        <div class="panel-body">
+          <TodoForm />
         </div>
-        <div class="col-md-7">
-            <div class="panel panel-default">
-                <div class="panel-heading">Terefas</div>
-                <div class="panel-body">
-
-                    <ul class="nav nav-tabs">
-                        <li class="active">
-                            <a href="#all" data-toggle="tab">Todos</a>
-                        </li>
-                        <li>
-                            <a href="#pending" data-toggle="tab">Pendente</a>
-                        </li>
-                        <li>
-                            <a href="#done" data-toggle="tab">Concluído</a>
-                        </li>
-                    </ul>
-
-                    <div class="tab-content">
-
-                        <div class="tab-pane active" id="all">
-                            <TodoTable :todos="todos" />
-                        </div>
-
-                        <div class="tab-pane" id="pending">
-                            <TodoTable :todos="todosPending" />
-                        </div>
-
-                        <div class="tab-pane" id="done">
-                            <TodoTable :todos="todosDone" />
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
+    <div class="col-md-7">
+      <div class="panel panel-default">
+        <div class="panel-heading">Terefas</div>
+        <div class="panel-body">
+
+          <ul class="nav nav-tabs">
+            <li class="active">
+              <a href="#all" data-toggle="tab">Todos</a>
+            </li>
+            <li>
+              <a href="#pending" data-toggle="tab">Pendente</a>
+            </li>
+            <li>
+              <a href="#done" data-toggle="tab">Concluído</a>
+            </li>
+          </ul>
+
+          <div class="tab-content">
+
+            <div class="tab-pane active" id="all">
+              <TodoTable :todos="todos" />
+            </div>
+
+            <div class="tab-pane" id="pending">
+              <TodoTable :todos="todosPending" />
+            </div>
+
+            <div class="tab-pane" id="done">
+              <TodoTable :todos="todosDone" />
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
-import TodoForm from './TodoForm';
-import TodoTable from './TodoList';
+import { mapGetters } from 'vuex'
+import TodoForm from './TodoForm'
+import TodoTable from './TodoList'
 
 export default {
-    components: { TodoForm, TodoTable },
-    computed: {
-        ...mapGetters({
-            todosPending: 'getTodosPending',
-            todosDone: 'getTodosDone',
-            todos: 'getTodoList'
-        })
-    },
-    created() {
-        this.$store.dispatch('TODO_LOAD');
-    }
+  components: { TodoForm, TodoTable },
+  computed: {
+    ...mapGetters({
+      todosPending: 'getTodosPending',
+      todosDone: 'getTodosDone',
+      todos: 'getTodoList'
+    })
+  },
+  created () {
+    this.$store.dispatch('TODO_LOAD')
+  }
 }
 </script>
