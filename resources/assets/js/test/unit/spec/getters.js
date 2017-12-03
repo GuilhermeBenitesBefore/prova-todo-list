@@ -1,4 +1,4 @@
-import { getters } from '../../../store'
+import getters from '../../../store/getters'
 
 describe('Store.getters', () => {
   let state
