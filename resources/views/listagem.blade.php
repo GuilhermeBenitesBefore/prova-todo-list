@@ -7,7 +7,7 @@
     <div class="postIt">
       <a href="Todo/delete/{{$toDo->id}}" class="excluir">X</a>
       <h2>{{$toDo->titulo}}</h2>
-      <p>Lorem Ipsum </p>
+      <p>{{$toDo->descricao}}</p>
     </div>
   </li>
 @endforeach

@@ -8,4 +8,11 @@ class Todo extends Model
 {
     protected $fillable = ['titulo','descricao','vencimento'];
     //
+
+
+
+    public function category(){
+
+        return $this->hasMany(Category::class);
+    }
 }

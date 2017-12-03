@@ -4,7 +4,7 @@ namespace TodoList;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Categoria extends Model
+class Category extends Model
 {
     //
 }
