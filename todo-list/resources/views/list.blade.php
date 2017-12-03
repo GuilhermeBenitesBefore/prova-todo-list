@@ -8,7 +8,7 @@
             <h3 class="title">{{ $todo->title }} </h3>
         </div>
         <div class="col-md-2">
-            <button type="submit">
+            <button type="submit" class="btn-no-decoration pull-right">
                 <i class="fa fa-trash-o pull-right btn-trash" aria-hidden="true" title="Excluir"></i>
             </button>
             <a href="/show/{{ $todo->id }}">

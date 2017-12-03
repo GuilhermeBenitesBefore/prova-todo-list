@@ -11435,3 +11435,10 @@ div.deadline i {
   color: #333;
 }
 
+.btn-no-decoration {
+  padding: 0;
+  border: none;
+  background: none;
+  margin-left: 5px;
+}
+

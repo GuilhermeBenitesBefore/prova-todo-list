@@ -45,3 +45,10 @@ div.deadline {
 .btn-edit {
     color: $body-bg;
 }
+
+.btn-no-decoration {
+    padding: 0;
+    border: none;
+    background: none;
+    margin-left: 5px;
+}
