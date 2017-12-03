@@ -18,6 +18,6 @@ Route::get('/Todo', 'TodoController@getAll');
 Route::get('/Todo/{id}', 'TodoController@getById')->where('id', '[0-9]+');
 Route::get('/Todo/delete/{id}', 'TodoController@delete')->where('id', '[0-9]+');
 Route::post('/Todo/cadastrado', 'TodoController@postToDo');
-Route::get('/Todo/cadastrar', function (){ return view('cadastro');});
+Route::get('/Todo/cadastrar', 'TodoController@newTodo');
 
 
