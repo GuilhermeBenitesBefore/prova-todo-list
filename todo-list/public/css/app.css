@@ -11427,3 +11427,11 @@ div.deadline i {
   margin-right: 4px;
 }
 
+.btn-trash {
+  color: #9e0000;
+}
+
+.btn-edit {
+  color: #333;
+}
+

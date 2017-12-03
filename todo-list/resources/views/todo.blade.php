@@ -6,7 +6,10 @@
         @include('list')
     </div>
     <div class="col-md-offset-1 col-md-3">
-        @include('new')
+        @if(Request::is('show/*'))
+            @include('show')
+        @else
+            @include('new')
+        @endif
     </div>
-
 @stop
