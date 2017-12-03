@@ -104,7 +104,9 @@ class TaskController extends Controller
      */
     public function destroy(Task $task)
     {
-        $task->tags()->delete();
+        if (count($task->tags()->get()) > 0) {
+            $task->tags()->delete();
+        }
         $task->delete();
         return response()->json(null, 204);
     }
