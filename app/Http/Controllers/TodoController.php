@@ -41,9 +41,9 @@ class ToDoController extends Controller {
     }
 
     public function putSave(ToDoRequest $request, $id){
-        $params = $request->all();
-        $todo = Todo::where('id', $id )->first();
-        $todo->update($params);
+        $toDo = Todo::find($id); 
+        $toDoUpdated = $request->all();
+        $toDo->update(  $toDoUpdated);
           
         return redirect('/Todo');
     }
