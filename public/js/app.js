@@ -61062,11 +61062,40 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['todos'],
+    data: function data() {
+        return {
+            search: ''
+        };
+    },
+
+    computed: {
+        filteredTodos: function filteredTodos() {
+            var _this = this;
+
+            return this.todos.filter(function (todo) {
+                return todo.title.toLowerCase().includes(_this.search.toLowerCase());
+            });
+        }
+    },
     methods: {
         handleDblClick: function handleDblClick(todo) {
             this.$store.commit('FORM_SET_EDIT', todo);
@@ -61092,33 +61121,71 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _vm.todos && _vm.todos.length
-      ? _c("table", { staticClass: "table table-hover" }, [
-          _vm._m(0, false, false),
-          _vm._v(" "),
-          _c(
-            "tbody",
-            _vm._l(_vm.todos, function(todo) {
-              return _c(
-                "tr",
+      ? _c("div", [
+          _c("div", { staticClass: "form-group search__container" }, [
+            _c("input", {
+              directives: [
                 {
-                  key: todo.id,
-                  staticClass: "cursor",
-                  on: {
-                    dblclick: function($event) {
-                      _vm.handleDblClick(todo)
-                    }
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.search,
+                  expression: "search"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text", placeholder: "Buscar por..." },
+              domProps: { value: _vm.search },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
                   }
-                },
-                [
-                  _c("td", [_vm._v(_vm._s(todo.title))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(_vm._f("dateFormat")(todo.start)))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(_vm._f("dateFormat")(todo.end)))])
-                ]
-              )
+                  _vm.search = $event.target.value
+                }
+              }
             })
-          )
+          ]),
+          _vm._v(" "),
+          _c("table", { staticClass: "table table-hover" }, [
+            _vm._m(0, false, false),
+            _vm._v(" "),
+            _c("tfoot", [
+              _c("tr", [
+                _c("td", { attrs: { colspan: "3" } }, [
+                  _c("div", { staticClass: "text-right" }, [
+                    _vm._v("Total: " + _vm._s(_vm.todos.length))
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "tbody",
+              _vm._l(_vm.filteredTodos, function(todo) {
+                return _c(
+                  "tr",
+                  {
+                    key: todo.id,
+                    staticClass: "cursor",
+                    on: {
+                      dblclick: function($event) {
+                        _vm.handleDblClick(todo)
+                      }
+                    }
+                  },
+                  [
+                    _c("td", [_vm._v(_vm._s(todo.title))]),
+                    _vm._v(" "),
+                    _c("td", [
+                      _vm._v(_vm._s(_vm._f("dateFormat")(todo.start)))
+                    ]),
+                    _vm._v(" "),
+                    _c("td", [_vm._v(_vm._s(_vm._f("dateFormat")(todo.end)))])
+                  ]
+                )
+              })
+            )
+          ])
         ])
       : _vm._e(),
     _vm._v(" "),
@@ -61189,7 +61256,7 @@ exports = module.exports = __webpack_require__(46)(undefined);
 
 
 // module
-exports.push([module.i, "\n.todolist__pagraph--not-found {\n    margin: 10px 0;\n}\n", ""]);
+exports.push([module.i, "\n.todolist__pagraph--not-found {\n    margin: 10px 0;\n}\n.search__container {\n    margin: 10px 0;\n}\n", ""]);
 
 // exports
 
