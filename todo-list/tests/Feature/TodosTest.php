@@ -68,19 +68,18 @@ class TodosTest extends TestCase
     }
 
     public function testEditATodoWithValues() {
-        $newDescription = 'Upgrade to Windows 10, install Office and firefox.';
-
         $todoToBeEdited = Todo::find(2);
-        $todoToBeEdited->description = $newDescription;
+        $todoToBeEdited->description = 'Upgrade to Windows 10, install Office and firefox.';
             
-        $this->post('/update', $todoToBeEdited->toArray())->assertStatus(302);
-        $this->get('/')->assertSeeText($newDescription);
+        $this->post('/update/2', $todoToBeEdited->toArray())->assertStatus(302);
+        $this->get('/')->assertDontSeeText('Upgrade to Windows 10 and install Office.');
+        $this->get('/')->assertSeeText('Upgrade to Windows 10, install Office and firefox.');
     }
 
     public function testShouldNotEditATodoWithoutTitle() {
         $todoToBeEdited = Todo::find(1);
         $todoToBeEdited->title = null;
             
-        $this->post('/update', $todoToBeEdited->toArray())->assertSessionHasErrors('title');
+        $this->post('/update/1', $todoToBeEdited->toArray())->assertSessionHasErrors('title');
     }
 }
