@@ -84,12 +84,9 @@
                 </div>
 
                   <div class="links">
-                    <a href="{{ url('/Todo') }}">Lista</a>
-                    <a href="{{ url('/Todo/new') }}">Cadastrar</a>
-                    
-                    
-                    
-                    
+                    <a href="{{ url('/Todo') }}">Lista de tarefas</a>
+                    <a href="{{ url('/Todo/new') }}">Cadastrar tarefa</a>
+                        
                 </div>
             </div>
         </div>

@@ -1,13 +1,7 @@
 @extends('principal')
 @section('conteudo')
 
-<div class="alert alert-danger">
-@foreach($errors->all() as $error)
-  <ul>
-    <li>{{$error}}</li>
-  </ul>
-  @endforeach
-</div>
+
 
 <form action="/Todo/edit/{{$toDo->id}}" method="post" class="cadastrar">
   <input type="hidden" name="_token" value="{{ csrf_token()}}">
@@ -32,8 +26,9 @@
           @endforeach
         </select>
         <input class="form-control"  type="date" name="vencimento" value="{{$toDo->vencimento}}" >
-         <div class="botaoLembrar">
-          <button type="submit" class="btn btn-primary">Salvar Tarefa</button>
+           
+         <div class="text-center">
+          <button type="submit" class="btn btn-success">Salvar Tarefa</button>
         </div>
       
       </div>

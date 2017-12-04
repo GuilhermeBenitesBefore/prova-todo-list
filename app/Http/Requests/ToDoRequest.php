@@ -26,13 +26,15 @@ class ToDoRequest extends FormRequest
         return [
             'titulo' => 'required|min:3',
             'descricao' => 'required|max:255',
+            'vencimento' => 'required',
+            'category_id' => 'required',
             //
         ];
     }
 
     public function messages(){
         return [
-            'required' => 'O :attribute é obrigatório'
+            'required' => 'O campo :attribute é obrigatório'
         ];
     }
 }

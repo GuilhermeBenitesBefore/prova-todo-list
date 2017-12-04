@@ -3,16 +3,28 @@
 <head>
     <link rel="stylesheet" type="text/css" href="/css/app.css">
     <link rel="stylesheet" type="text/css" href="/css/toDo.css">
-    <link  href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet"type="text/css">
-    <title>Document</title>
+    
+    <title>ToDoList</title>
 </head>
 <body>
     <div class="container">
+
+        @if($errors->all())
+        <div class="alert alert-danger">
+            @foreach($errors->all() as $error)
+            <ul>
+                <li>{{$error}}</li>
+            </ul>
+            @endforeach
+        </div>
+        @endif
+
         @yield('conteudo')
     </div>
 </body>
 <footer>
-    <p class="modal-footer" > @Copyrigth Marlom Figueiredo Souza<p>
+<div class="text-center">
+    <p class="modal-footer"> @Copyrigth Marlom Figueiredo Souza<p>
+</div>
 </footer>
-
 </html>

@@ -11,12 +11,14 @@ use TodoList\Http\Requests\ToDoRequest;
 class ToDoController extends Controller {
     
     public function getAll(){
-        $todos = Todo::All();
-        return view('listagem')->with('toDos',$todos);
+        $toDos = Todo::All();
+        return view('listagem')->with(['toDos'=> $toDos,'categories'=>  Category::all()]);
     }
 
-    public function getById($id){
-        //
+
+    public function getByCategoryId($category_id){
+        $toDos = Todo::findToDosByCategoryId($category_id);
+        return view('listagem')->with(['toDos'=> $toDos,'categories'=>  Category::all()]);
     }
 
     public function delete($id){

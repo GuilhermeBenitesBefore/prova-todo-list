@@ -1,6 +1,15 @@
+#tituloTodo,
+#descricao {
+    background-color: transparent
+}
+
+#descricao {
+    font-size: 130%;
+}
+
 h2,
 p {
-    font-size: 100%;
+    font-size: 120%;
     font-weight: normal;
 }
 
@@ -10,11 +19,11 @@ p {
 }
 
 .itemPostIt {
-    width: 300px;
+    width: 280px;
 }
 
 .cadastrar .itemPostIt {
-    width: 350px;
+    width: 320px;
 }
 
 .linhaPostIt {
@@ -27,7 +36,7 @@ p {
     color: #000;
     background: #ffc;
     display: block;
-    height: 300px;
+    height: 280px;
     padding: 1em;
 }
 
@@ -36,8 +45,8 @@ p {
     color: #000;
     background: #ffc;
     display: block;
-    height: 350px;
-    padding: 1em;
+    height: 400px;
+    padding: 5px;
 }
 
 .linhaPostIt .itemPostIt {
@@ -119,7 +128,7 @@ p {
     background: rgb(128, 40, 40);
 }
 
-.excluir {
+.topoDireito {
     position: relative;
     float: right;
     top: -10px;
