@@ -2,13 +2,39 @@
   <div>
     <form>
       <div class="form-group">
-        <label for="title">Título</label>
+        <label for="title">Título *</label>
         <input
           type="text"
           class="form-control"
           id="title"
           name="title"
           v-model="todo.title" />
+      </div>
+      <div class="form-group">
+        <label for="start">Início *</label>
+        <datepicker
+          name="start"
+          format="dd/MM/yyyy"
+          input-class="form-control datepicker__input"
+          language="pt-br"
+          :required="true"
+          :disabled="startOptions"
+          @selected="handleStartSelected"
+          @opened="handleStartOpened"
+          v-model="todo.start"></datepicker>
+      </div>
+      <div class="form-group">
+        <label for="end">Fim *</label>
+        <datepicker
+          name="end"
+          format="dd/MM/yyyy"
+          input-class="form-control datepicker__input"
+          language="pt-br"
+          :required="true"
+          :disabled="endOptions"
+          @selected="handleEndSelected"
+          @opened="handleEndOpened"
+          v-model="todo.end"></datepicker>
       </div>
       <div class="form-group">
         <label for="tags">Tags</label>
@@ -28,32 +54,6 @@
           class="form-control"
           rows="3"
           v-model="todo.description"></textarea>
-      </div>
-      <div class="form-group">
-        <label for="start">Início</label>
-        <datepicker
-          name="start"
-          format="dd/MM/yyyy"
-          input-class="form-control datepicker__input"
-          language="pt-br"
-          :required="true"
-          :disabled="startOptions"
-          @selected="handleStartSelected"
-          @opened="handleStartOpened"
-          v-model="todo.start"></datepicker>
-      </div>
-      <div class="form-group">
-        <label for="end">Fim</label>
-        <datepicker
-          name="end"
-          format="dd/MM/yyyy"
-          input-class="form-control datepicker__input"
-          language="pt-br"
-          :required="true"
-          :disabled="endOptions"
-          @selected="handleEndSelected"
-          @opened="handleEndOpened"
-          v-model="todo.end"></datepicker>
       </div>
       <div class="form-group" v-if="isEditMode">
         <div class="checkbox">

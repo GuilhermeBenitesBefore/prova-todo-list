@@ -24,6 +24,7 @@ module.exports = {
   },
   globals: {
     'BASE_URL': true,
-    'axios': true
+    'axios': true,
+    'introJs': true
   }
 }

@@ -53,3 +53,5 @@ if (token) {
 // })
 
 window.BASE_URL = document.head.querySelector('meta[name="base_url"]').content
+
+window.introJs = require('intro.js').introJs
