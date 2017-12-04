@@ -11,6 +11,10 @@
 //Font Awesome
 @import "node_modules/font-awesome/scss/font-awesome.scss";
 
+.container {
+    padding: 100px;
+}
+
 .no-resizable {
     resize: none;
 }
@@ -51,4 +55,20 @@ div.deadline {
     border: none;
     background: none;
     margin-left: 5px;
+}
+
+.top {
+    position: fixed;
+    text-align: center;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid #5d5d5d;
+    background-color: $body-bg;
+
+    h2 {
+        color: white;
+    }
 }

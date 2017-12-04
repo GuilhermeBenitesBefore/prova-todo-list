@@ -9,7 +9,6 @@ class TodosTest extends TestCase
 {
     public function testInsertingAnValidTodo()
     {
-        
         $this->assertTrue(true);
     }
 }
