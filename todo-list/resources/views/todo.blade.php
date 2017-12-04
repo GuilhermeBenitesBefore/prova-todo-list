@@ -1,7 +1,6 @@
 @extends('app')
 
 @section('content')
-
     <div class="col-md-8">
         @include('list')
     </div>
