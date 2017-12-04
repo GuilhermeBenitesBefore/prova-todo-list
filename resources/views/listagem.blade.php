@@ -23,7 +23,7 @@
 
 @if( $toDos->count() == 0 )
      <div class="alert alert-danger">
-        <p>Não há mais nenhum lembrete</p>
+        <p>Não há mais nenhuma tarefa</p>
      </div>
 @endif
 
