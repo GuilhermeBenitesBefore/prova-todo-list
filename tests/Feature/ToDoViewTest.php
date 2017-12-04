@@ -12,11 +12,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 class ToDoViewTest extends TestCase
 {
     use DatabaseMigrations;
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
+    
     public function testCreateAToDo()
     {
         $category = factory(Category::class)->create(["name" => 'casa']);
