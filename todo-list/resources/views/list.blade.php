@@ -28,3 +28,8 @@
     </div>
 </form>
 @endforeach
+@if (count($todos) === 0)
+    <div class="alert alert-success col-md-12">
+        <strong>Que legal!</strong> Parece que você existem tarefas pendentes. Hora do café ;)
+    </div>
+@endif
