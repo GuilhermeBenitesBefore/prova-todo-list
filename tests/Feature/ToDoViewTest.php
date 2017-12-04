@@ -25,4 +25,17 @@ class ToDoViewTest extends TestCase
         $todo->save();
         $this->get('/Todo')->assertSeeText('titulo3');
     }
+
+    public function testEmptyToDo()
+    {
+        $category = factory(Category::class)->create(["name" => 'casa']);
+        $category->save();
+        $todo = factory(Todo::class)->create(["titulo" => 'titulo3', "category_id" =>$category->id ]);
+        $todo->save();
+
+        $toDo = Todo::first();
+        $toDo->delete();
+
+        $this->get('/Todo' )->assertSeeText('Não há mais nenhuma tarefa');
+    }
 }

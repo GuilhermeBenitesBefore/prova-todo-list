@@ -1,58 +1,39 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# Prova de Avaliação Técnica
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+Esta Prova consiste em desenvolver uma aplicação WEB feita na linguagem PHP para fim de avaliação Técnica no processo seletivo da Before.
 
-## About Laravel
+# Aplicação
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+A aplicação que será desenvolvida é um sistema de lista de afazeres (Todo-List). Aonde o usuário poderá adicionar tarefas na lista, categorizar as tarefas, adicionar lembretes, Data da Tarefa.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+A tarefa deverá conter um título, um corpo de texto, uma categoria, uma data inicio e fim (opcional).
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
+# Método de Avaliação
 
-## Learning Laravel
+A prova possui um critério mínimo de requisitos que devem ser entregue, que são:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
+ - Capacidade de criar Tarefas
+ - Categorizar Tarefas
+ - Adicionar uma Data na Tarefa
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+A partir do momento que foi atigindo o critério mínimo o candidato tem direito de submeter a prova, porém caso o candidato queira adicionar funcionalidades, modificações em questões de layout, arquitetura da aplicação etc, isso será avaliado também.
 
-## Laravel Sponsors
+# Itens Adicionais
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](http://patreon.com/taylorotwell):
+Caso o candidato utilize algum dos itens a seguir conseguirá pontos adicionais na prova:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Pulse Storm](http://www.pulsestorm.net/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
+ - Utilização de Framework PHP Laravel
+ - Utilização de Framework Javascript Vuejs
+ - Utilização de Padrões de Projetos
+ - Utilização de Testes Automatizados
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+# Duração da Prova
 
-## Security Vulnerabilities
+A prova terá duração determinada pelo período em que o candidato terá acesso ao repositório da prova. O envio é exclusivo pelo Github e deve ser durante o período da prova, resaltando que o avaliado tem o direito de entregar a qualquer momento o código contando que esteja no tempo hábil da prova.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# Passos para entregar a Prova
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+ - Criar um fork do repositorio
+ - adicionar o código no repositorio forkeado
+ - fazer um pull request para o repositorio da before
