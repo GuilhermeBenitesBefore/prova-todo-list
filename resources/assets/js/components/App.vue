@@ -48,8 +48,8 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import TodoForm from './TodoForm'
-import TodoTable from './TodoList'
+import TodoForm from './TodoForm.vue'
+import TodoTable from './TodoList.vue'
 
 export default {
   components: { TodoForm, TodoTable },
