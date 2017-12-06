@@ -1,0 +1,137 @@
+#tituloTodo,
+#descricao {
+    background-color: transparent
+}
+
+#descricao {
+    font-size: 130%;
+}
+
+h2,
+p {
+    font-size: 120%;
+    font-weight: normal;
+}
+
+.linhaPostIt,
+.itemPostIt {
+    list-style: none;
+}
+
+.itemPostIt {
+    width: 280px;
+}
+
+.cadastrar .itemPostIt {
+    width: 320px;
+}
+
+.linhaPostIt {
+    overflow: hidden;
+    padding: 5em;
+}
+
+.linhaPostIt .itemPostIt .postIt {
+    text-decoration: none;
+    color: #000;
+    background: #ffc;
+    display: block;
+    height: 280px;
+    padding: 1em;
+}
+
+.cadastrar .linhaPostIt .itemPostIt .postIt {
+    text-decoration: none;
+    color: #000;
+    background: #ffc;
+    display: block;
+    height: 400px;
+    padding: 5px;
+}
+
+.linhaPostIt .itemPostIt {
+    margin: 1px;
+    float: left;
+}
+
+.linhaPostIt .itemPostIt h2 {
+    font-size: 140%;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.linhaPostIt .itemPostIt p {
+    font-family: "Reenie Beanie", arial, sans-serif;
+}
+
+.listaPost .linhaPostIt .itemPostIt .postIt {
+    /* Firefox */
+    -moz-box-shadow: 5px 5px 7px rgba(33, 33, 33, 1);
+    /* Safari+Chrome */
+    -webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
+    /* Opera */
+    box-shadow: 5px 5px 7px rgba(33, 33, 33, .7);
+    -webkit-transform: rotate(-7deg);
+    -o-transform: rotate(-7deg);
+    -moz-transform: rotate(-7deg);
+    -moz-transition: -moz-transform .15s linear;
+    -o-transition: -o-transform .15s linear;
+    -webkit-transition: -webkit-transform .15s linear;
+}
+
+.listaPost .linhaPostIt .itemPostIt:nth-child(even) .postIt {
+    -o-transform: rotate(3deg);
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    position: relative;
+    top: 5px;
+}
+
+.listaPost .linhaPostIt .itemPostIt:nth-child(3n) .postIt {
+    -o-transform: rotate(-8deg);
+    -webkit-transform: rotate(-8deg);
+    -moz-transform: rotate(-8deg);
+    position: relative;
+    top: -5px;
+}
+
+.listaPost .linhaPostIt .itemPostIt:nth-child(5n) .postIt {
+    -o-transform: rotate(7deg);
+    -webkit-transform: rotate(7deg);
+    -moz-transform: rotate(7deg);
+    position: relative;
+    top: -10px;
+}
+
+.listaPost .linhaPostIt .itemPostIt .postIt:hover,
+.listaPost .linhaPostIt .itemPostIt .postIt:focus {
+    -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
+    -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
+    box-shadow: 10px 10px 7px rgba(0, 0, 0, .7);
+    -webkit-transform: scale(1.20);
+    -moz-transform: scale(1.20);
+    -o-transform: scale(1.20);
+    position: relative;
+    z-index: 5;
+    font-size: 100%;
+}
+
+.linhaPostIt .itemPostIt:nth-child(even) .postIt {
+    background: #cfc;
+}
+
+.linhaPostIt .itemPostIt:nth-child(3n) .postIt {
+    background: #ccf;
+}
+
+.linhaPostIt .itemPostIt:nth-child(5n) .postIt {
+    background: rgb(128, 40, 40);
+}
+
+.topoDireito {
+    position: relative;
+    float: right;
+    top: -10px;
+    right: -10px;
+    padding: 10px;
+}
